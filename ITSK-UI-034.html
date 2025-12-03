@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div id="container">
+      <div class="lnb-wrap">
+        <h1><a href="#"></a></h1>
+        <a href="#" class="btn-menu"></a>
+        <h2 class="hide">메뉴</h2>
+        <ul class="lnb" data-active="4">
+          <li class="search">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 검색</span>
+            </a>
+          </li>
+          <li class="makeup">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 재구성</span>
+            </a>
+          </li>
+          <li class="create">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 생성 및 업로드</span>
+            </a>
+          </li>
+          <li class="data">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 대쉬보드</span>
+            </a>
+          </li>
+        </ul>
+        <!-- <a href="#" class="btn-menual">사용자 매뉴얼</a> -->
+        <a href="#" class="btn-logout">로그아웃</a>
+      </div><!-- .lnb-wrap -->
+      <div class="content-wrap">
+        <div class="tit-area">
+          <h3 class="data">시나리오 대시보드</h3>
+        </div>
+        <div class="con-top-area">
+          <div class="input-wrap input-datepicker">
+            <span class="label">기간검색</span>
+            <div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom">
+              <input id="startpicker-input1" type="text" aria-label="Date">
+              <span class="tui-ico-date"></span>
+              <div id="startpicker-container1" style="margin-left: -1px;"></div>
+            </div>
+            <span class="bridge">~</span>
+            <div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom">
+              <input id="endpicker-input1" type="text" aria-label="Date">
+              <span class="tui-ico-date"></span>
+              <div id="endpicker-container1" style="margin-left: -1px;"></div>
+            </div>
+            <span class="btn-base tp2 md search ml8"><a href="#" style="width: 101px;"><span class="ico search front">조회</span></a></span>
+          </div>
+        </div><!-- .con-top-area -->
+        <ul class="scenario-list">
+          <li>
+            <dl>
+              <dt>
+                <span class="tit">OpenScenario</span>
+                <span class="value">99,999</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li class="tit">
+                    <span class="label">날씨</span>
+                    <span class="label">수량</span>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드 현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">50</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">이벤트 횟수</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">25</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">취득 시간</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <ul>
+                  <li class="tit">
+                    <span class="label">날씨</span>
+                    <span class="label">수량</span>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드 현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">50</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">이벤트 횟수</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">25</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">취득 시간</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+
+          <li>
+            <dl>
+              <dt>
+                <span class="tit">OpenDrive</span>
+                <span class="value">99,999</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li class="tit">
+                    <span class="label">날씨</span>
+                    <span class="label">수량</span>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드 현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">50</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">이벤트 횟수</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">25</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">취득 시간</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <ul>
+                  <li class="tit">
+                    <span class="label">날씨</span>
+                    <span class="label">수량</span>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드 현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">50</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">이벤트 횟수</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">25</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">취득 시간</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+
+          <li>
+            <dl>
+              <dt>
+                <span class="tit">시나리오 텍스트</span>
+                <span class="value">99,999</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li class="tit">
+                    <span class="label">날씨</span>
+                    <span class="label">수량</span>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드 현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">50</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">이벤트 횟수</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">25</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">취득 시간</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <ul>
+                  <li class="tit">
+                    <span class="label">날씨</span>
+                    <span class="label">수량</span>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드 현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">50</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">이벤트 횟수</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">25</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">취득 시간</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+
+          <li>
+            <dl>
+              <dt>
+                <span class="tit">검수현황</span>
+                <span class="value">99,999</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li class="tit">
+                    <span class="label">날씨</span>
+                    <span class="label">수량</span>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드 현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">50</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">이벤트 횟수</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">25</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">취득 시간</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <ul>
+                  <li class="tit">
+                    <span class="label">날씨</span>
+                    <span class="label">수량</span>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드 현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">50</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">이벤트 횟수</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">25</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">취득 시간</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+
+          <li>
+            <dl>
+              <dt>
+                <span class="tit">업로드 현황</span>
+                <span class="value">99,999</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li class="tit">
+                    <span class="label">날씨</span>
+                    <span class="label">수량</span>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드 현황</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">추출툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">100</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">검수툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">업로드툴</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">50</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">이벤트 횟수</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">25</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content">
+                    <span class="label">취득 시간</span>
+                    <div class="gage-wrap">
+                      <div class="gage-area">
+                        <span class="gage">90</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div><!-- .content-wrap -->
+    </div><!-- #container -->
+  </div><!-- #wrapper -->
+  <script>
+    tui.DatePicker.localeTexts['customKey'] = {
+      titles: {
+          // days
+          DD: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          // daysShort
+          D: ['일', '월', '화', '수', '목', '금', '토'],
+          // months
+          MMMM: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+          // monthsShort
+          MMM: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+      },
+      titleFormat: 'yyyy.MMM',
+      todayFormat: '오늘 : yyyy.MMMM.dd',
+      date: 'Date',
+      time: 'Time'
+    };
+    var today1 = new Date();
+    var picker1 = tui.DatePicker.createRangePicker({
+      language: 'customKey',
+      startpicker: {
+        date: today1,
+        input: '#startpicker-input1',
+        container: '#startpicker-container1'
+      },
+      endpicker: {
+        date: today1,
+        input: '#endpicker-input1',
+        container: '#endpicker-container1'
+      },
+      selectableRanges: [
+        [today1, new Date(today1.getFullYear() + 1, today1.getMonth(), today1.getDate())]
+      ],
+      format: 'YYYY-MM-dd',
+      // showAlways: true,
+    });
+
+    picker1.on('change:end', () => {
+        console.log(123);
+    });
+
+    $('.gage-wrap .gage-area .gage').each(function(i){
+      $(this).attr('style', `width: ${$(this).text()}%`);
+    });
+  </script>
+</body>
+</html>

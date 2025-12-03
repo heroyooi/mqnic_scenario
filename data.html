@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div id="container" class="activeLnb">
+      <div class="lnb-wrap on">
+        <h1><a href="#"></a></h1>
+        <a href="#" class="btn-menu"></a>
+        <h2 class="hide">메뉴</h2>
+        <ul class="lnb" data-active="5">
+          <li class="drive">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">주행환경 검색</span>
+            </a>
+          </li>
+          <li class="scenario">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 통계</span>
+            </a>
+          </li>
+          <li class="video">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">영상정보 등록</span>
+            </a>
+          </li>
+          <li class="history">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">영상정보 이력</span>
+            </a>
+          </li>
+          <li class="data">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">데이터 모니터링</span>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="btn-logout"></a>
+      </div><!-- .lnb-wrap -->
+      <div class="content-wrap">
+        <div class="tit-area">
+          <h3 class="data">데이터 모니터링</h3>
+        </div>
+        <h4 class="sub-tit">영상 업로드 및 처리 현황</h4>
+        <div class="data-chart-area">
+          <div style="height: 784px; display: flex; justify-content: center; align-items: center;">
+            <span style="font-size: 100px; font-weight: 600; color: rgba(0, 0, 0, 0.05);">Chart Area</span>
+          </div>
+        </div><!-- .data-chart-area -->
+      </div><!-- .content-wrap -->
+    </div><!-- #container -->
+  </div><!-- #wrapper -->
+
+  <script>
+    var queryLnb = $.urlParam('lnb');
+    
+    if (Boolean(queryLnb)) {
+      setTimeout(function(){
+        $('.lnb-wrap .btn-menu').click();
+      }, 250);
+    }
+  </script>
+</body>
+</html>

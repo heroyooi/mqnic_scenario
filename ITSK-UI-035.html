@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div id="container" class="activeLnb">
+      <div class="lnb-wrap on">
+        <h1><a href="#"></a></h1>
+        <a href="#" class="btn-menu"></a>
+        <h2 class="hide">메뉴</h2>
+        <ul class="lnb" data-active="1">
+          <li class="search">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 검색</span>
+            </a>
+          </li>
+          <li class="makeup">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 재구성</span>
+            </a>
+          </li>
+          <li class="create">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 생성 및 업로드</span>
+            </a>
+          </li>
+          <li class="data">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 대쉬보드</span>
+            </a>
+          </li>
+        </ul>
+        <!-- <a href="#" class="btn-menual">사용자 매뉴얼</a> -->
+        <a href="#" class="btn-logout">로그아웃</a>
+      </div><!-- .lnb-wrap -->
+      <div class="content-wrap">
+        <div class="tit-area">
+          <h3 class="no-icon"><strong>Functional(ID : Fu_001)</strong> 시나리오</h3>
+        </div>
+        <div class="con-top-area">
+          <span class="btn-base tp2 ms green"><a href="#"><span class="ico request front">공개신청</span></a></span>
+          <div class="btns-wrap">
+            <span class="btn-base tp1 md"><a href="#"><span class="ico del front">삭제</span></a></span>
+            <span class="btn-base tp2 md"><a href="#"><span class="ico modify front">수정</span></a></span>
+            <span class="btn-base tp2 md"><a href="#"><span class="ico view front">목록</span></a></span>
+          </div>
+        </div><!-- .con-top-area -->
+        <ul class="regist-list mt20">
+          <li class="col2">
+            <div class="regist-section">
+              <div class="tit-wrp between">
+                <p class="tit">시나리오 기본정보</p>
+                <span class="info essential">시나리오 매개변수 필수값입니다.</span>
+              </div>
+              <div class="regist-form">
+                <ul class="form-list">
+                  <li>
+                    <span class="label essential">시나리오 형태</span>
+                    <div class="input-flex">
+                      <p>Functional</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="label essential">시나리오 위치</span>
+                    <div class="input-flex">
+                      <p>본선</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="label essential">시나리오 유형</span>
+                    <div class="input-flex">
+                      <p>Cut-in</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="label essential">시나리오 목적</span>
+                    <div class="input-flex">
+                      <p>대상자동차의 Cut-in에 대한 주행 안전성 평가</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="label essential">시나리오 설명</span>
+                    <div class="input-flex">
+                      <p>본선차로 주행 중 후방 목표자동차와 충돌 없이 우측 감속차로로Cut-in 하기 위한 대상자동차(자율차)의 인지 및 대응이 필요한 상황</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="label essential">상황별 위험도</span>
+                    <div class="input-flex">
+                      <p class="count">10.222</p>
+                      <ul class="res-list">
+                        <li>
+                          <span class="label">사망자 평균</span>
+                          <span class="result">0.191</span>
+                        </li>
+                        <li>
+                          <span class="label">중상자평균</span>
+                          <span class="result">1.182</span>
+                        </li>
+                        <li>
+                          <span class="label">경상자평균</span>
+                          <span class="result">1.328</span>
+                        </li>
+                        <li>
+                          <span class="label">부상자평균</span>
+                          <span class="result">0.131</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="regist-section">
+              <div class="tit-wrp">
+                <p class="tit">전체 상황도</p>
+              </div>
+              <div class="regist-form map">
+                <img src="img/mockup/img-horizontal.png" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="tab-base tp2" style="width:264px;">
+              <ul>
+               <li class="on"><a href="#tab1">시나리오 세부항목</a></li>
+             </ul>
+            </div>
+            <div class="tip-box-wrap">
+              <div class="tip-box">
+                <p>평가를 위한 상황을 나타내는 가장 기본적인 형태, 도로, 환경, 상황 등에 대한 묘사 및 설명으로 구성된 시나리오입니다.</p>
+              </div>
+            </div>
+            <div class="tit-wrp right mt20">
+              <span class="info essential">시나리오 매개변수 필수값입니다.</span>
+            </div>
+            <div class="regist-form">
+              <ul class="inner-list">
+                <li>
+                  <p class="b-tit">기하구조</p>
+                  <ul class="form-list">
+                    <li>
+                      <span class="label">전체 차로수</span>
+                      <div class="input-flex col4">
+                        <p>2차로</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="label">차로 유형</span>
+                      <div class="input-flex col4">
+                        <p>직선부</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="b-tit">이동객체</p>
+                  <ul class="form-list">
+                    <li>
+                      <span class="label">대상자동차</span>
+                      <div class="input-flex col4">
+                        <p>승용차</p>
+                        <p>2차로</p>
+                        <p><span class="p-label">위치 : </span>-</p>
+                        <p><span class="p-label">움직임 : </span>직진주행중</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="label">목표자동차</span>
+                      <div class="input-flex col4">
+                        <p>승용차</p>
+                        <p>2차로</p>
+                        <p><span class="p-label">위치 : </span>ahead</p>
+                        <p><span class="p-label">움직임 : </span>정지</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="bridge">
+                  <p class="s-tit">상황</p>
+                  <ul class="form-list">
+                    <li>
+                      <span class="label">주변자동차</span>
+                      <div class="input-flex col4">
+                        <p><span class="p-label">위치 : </span>ahead-right</p>
+                        <p><span class="p-label">움직임 : </span>Cut-in</p>
+                        <p></p>
+                        <p></p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="label">목표자동차1</span>
+                      <div class="input-flex col4">
+                        <p><span class="p-label">위치 : </span>Ahead</p>
+                        <p><span class="p-label">움직임 : </span>Cut-in</p>
+                        <p></p>
+                        <p></p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div><!-- .content-wrap -->
+    </div><!-- #container -->
+  </div><!-- #wrapper -->
+  <script>
+    var queryLnb = $.urlParam('lnb');
+    if (Boolean(queryLnb)) {
+      setTimeout(function(){
+        $('.lnb-wrap .btn-menu').click();
+      }, 250);
+    }
+  </script>
+</body>
+</html>

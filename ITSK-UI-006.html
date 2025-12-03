@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div id="container" class="activeLnb">
+      <div class="lnb-wrap on">
+        <h1><a href="#"></a></h1>
+        <a href="#" class="btn-menu"></a>
+        <h2 class="hide">메뉴</h2>
+        <ul class="lnb" data-active="1">
+          <li class="search">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 검색</span>
+            </a>
+          </li>
+          <li class="makeup">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 재구성</span>
+            </a>
+          </li>
+          <li class="create">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 생성 및 업로드</span>
+            </a>
+          </li>
+          <li class="data">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 대쉬보드</span>
+            </a>
+          </li>
+        </ul>
+        <!-- <a href="#" class="btn-menual">사용자 매뉴얼</a> -->
+        <a href="#" class="btn-logout">로그아웃</a>
+      </div><!-- .lnb-wrap -->
+      <div class="content-wrap">
+        <div class="tit-area">
+          <h3 class="no-icon"><strong>Logical(ID : Lo_003)</strong> 시나리오</h3>
+        </div>
+        <div class="con-top-area">
+          <span class="btn-base tp2 ms green disabled"><a href="#"><span class="ico request front">공개신청</span></a></span>
+          <div class="btns-wrap">
+            <a href="#" class="btn-refresh">새로고침</a>
+            <span class="btn-base tp2 md"><a href="#"><span class="ico save front">저장</span></a></span>
+            <span class="btn-base tp2 md"><a href="#"><span class="ico view front">목록</span></a></span>
+          </div>
+        </div><!-- .con-top-area -->
+        <ul class="regist-list mt20">
+          <li class="col2">
+            <div class="regist-section">
+              <div class="tit-wrp">
+                <p class="tit">시나리오 기본정보</p>
+                <span class="info essential">시나리오 매개변수 필수값입니다.</span>
+              </div>
+              <div class="regist-form">
+                <ul class="form-list">
+                  <li>
+                    <span class="label essential">시나리오 형태</span>
+                    <div class="input-flex">
+                      <ul class="radio-list">
+                        <li>
+                          <span class="radio-base">
+                            <input type="radio" id="radio-stype-1" name="radio-stype" checked>
+                            <label for="radio-stype-1">Functional</label>
+                          </span>
+                        </li>
+                        <li>
+                          <span class="radio-base">
+                            <input type="radio" id="radio-stype-2" name="radio-stype">
+                            <label for="radio-stype-2">Logical</label>
+                          </span>
+                        </li>
+                        <li>
+                          <span class="radio-base">
+                            <input type="radio" id="radio-stype-3" name="radio-stype">
+                            <label for="radio-stype-3">Concrete</label>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="label essential">시나리오 위치</span>
+                    <div class="input-flex">
+                      <span class="select-base">
+                        <span class="value"></span>
+                        <select>
+                          <option value="0">선택</option>
+                          <option value="1" selected>본선</option>
+                          <option value="2">Value 2</option>
+                          <option value="3">Value 3</option>
+                        </select>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="label essential">시나리오 유형</span>
+                    <div class="input-flex">
+                      <span class="select-base disabled">
+                        <span class="value"></span>
+                        <select>
+                          <option value="0">선택</option>
+                          <option value="1" selected>컷아웃 - 목표차가 정상 컷아웃</option>
+                          <option value="2">Value 2</option>
+                          <option value="3">Value 3</option>
+                        </select>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="label essential">시나리오 목적</span>
+                    <div class="input-flex">
+                      <span class="select-base">
+                        <span class="value"></span>
+                        <select>
+                          <option value="0">선택</option>
+                          <option value="1" selected>대상자동차의 Cut-in에 대한 주행 안전성 평가</option>
+                          <option value="2">Value 2</option>
+                          <option value="3">Value 3</option>
+                        </select>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="label essential">시나리오 설명</span>
+                    <div class="input-flex">
+                      <textarea class="textarea-base">본선차로 주행 중 후방 목표자동차와 충돌 없이 우측 감속차로로Cut-in 하기 위한 대상자동차(자율차)의 인지 및 대응이 필요한 상황</textarea>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="regist-section">
+              <div class="tit-wrp">
+                <p class="tit">전체 상황도</p>
+              </div>
+              <div class="regist-form map">
+                <p class="no-data">등록된 상황도가 없습니다</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="tab-base tp2" style="width:264px;">
+              <ul>
+               <li class="on"><a href="#tab1">시나리오 세부항목</a></li>
+               <li><a href="#tab2">시나리오 코드</a></li>
+             </ul>
+            </div>
+            <div class="tip-box-wrap">
+              <div class="tip-box">
+                <p>평가를 위한 요소와 요소의 가능 범위를 지정한 시나리오, 다양한 요소를 통해 상황 시나리오를 세부적으로 구분하여 명확히 표현 가능합니다.</p>
+              </div>
+              <div class="input-wrap">
+                <div class="filter">
+                  <a href="#popup-filter" class="btn btn-popup-anim-1">모든필터</a>
+                </div>
+                <span class="btn-base tp2 md"><a href="#">입력값 추천</a></span>
+                <a href="#tip-recommend" class="btn-tip ml8">팁</a>
+              </div>
+              <div class="tip-area type-2" id="tip-recommend" style="right: 0;top: 28px;">
+                <p class="s-tit">입력값 추천</p>
+                <a href="#" class="btn-close"></a>
+                <p class="s-txt">주행환경 DB의 통계적 범위를 기준으로 시나리오 매개변수 대상 자동 적용</p>
+                <ul class="s-list">
+                  <li>• Logical(percentile) <strong>25, 75</strong></li>
+                  <li>• Concrete(median) <strong>중위값</strong></li>
+                </ul>
+                <p class="s-txt">시나리오 매개변수 추천 대상</p>
+                <ul class="s-list">
+                  <li>• 종방향 속도</li>
+                  <li>• 횡방향 속도</li>
+                  <li>• 가속도</li>
+                  <li>• 상대거리</li>
+                  <li>• 입사각</li>
+                </ul>
+              </div>
+            </div>
+            
+            <ul class="panel-base mt20">
+              <li id="tab1">
+                <div class="tit-wrp">
+                  <span class="info essential">시나리오 매개변수 필수값입니다.</span>
+                </div>
+                <div class="regist-form">
+                  <ul class="inner-list">
+                    <li>
+                      <p class="b-tit">Layer 1 : 평면 데이터</p>
+                      <p class="s-tit">도로구간</p>
+                      <ul class="form-list">
+                        <li>
+                          <span class="label">도로구간 종류</span>
+                          <div class="input-flex">
+                            <ul class="chk-list">
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-1">
+                                  <label for="chk-1">차도</label>
+                                </span>
+                              </li>
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-2">
+                                  <label for="chk-2">길어깨</label>
+                                </span>
+                              </li>
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-3">
+                                  <label for="chk-3">측도</label>
+                                </span>
+                              </li>
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-4">
+                                  <label for="chk-4">감소차로</label>
+                                </span>
+                              </li>
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-5">
+                                  <label for="chk-5">가속차로</label>
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="label">평면곡선부 최소 평면곡선 반지름</span>
+                          <div class="input-flex">
+                            <div class="input-wrap input-dash">
+                              <input type="text" class="input-base" value="0" />
+                              <span class="bridge">~</span>
+                              <input type="text" class="input-base" value="0" />
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="label">평면곡선부 최소 평면곡선 길이</span>
+                          <div class="input-flex">
+                            <div class="input-wrap input-dash">
+                              <input type="text" class="input-base" value="0" />
+                              <span class="bridge">~</span>
+                              <input type="text" class="input-base" value="0" />
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="bridge">
+                      <p class="s-tit">도로경사</p>
+                      <ul class="form-list">
+                        <li>
+                          <span class="label">최대 종단경사</span>
+                          <div class="input-flex">
+                            <div class="input-wrap input-dash">
+                              <input type="text" class="input-base" value="0" />
+                              <span class="bridge">~</span>
+                              <input type="text" class="input-base" value="0" />
+                            </div>
+                            <span class="result">증감: 1%</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="bridge">
+                      <p class="s-tit">차로</p>
+                      <ul class="form-list">
+                        <li>
+                          <span class="label">차로수</span>
+                          <div class="input-flex">
+                            <div class="input-wrap input-dash">
+                              <input type="text" class="input-base" value="0" />
+                              <span class="bridge">~</span>
+                              <input type="text" class="input-base" value="0" />
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="label">차로폭</span>
+                          <div class="input-flex">
+                            <div class="input-wrap input-dash">
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">m</span>
+                              <span class="bridge">~</span>
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">m</span>
+                            </div>
+                            <span class="result">증감: 0.1</span>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="label">최소 오른쪽 길어깨 폭(지방지역)</span>
+                          <div class="input-flex">
+                            <div class="input-wrap input-dash">
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">m</span>
+                              <span class="bridge">~</span>
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">m</span>
+                            </div>
+                            <span class="result">증감: 0.1</span>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="label">최소 오른쪽 길어깨 폭(도시지역)</span>
+                          <div class="input-flex">
+                            <div class="input-wrap input-dash">
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">m</span>
+                              <span class="bridge">~</span>
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">m</span>
+                            </div>
+                            <span class="result">증감: 0.1</span>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="label">최소 왼쪽 길어깨 폭</span>
+                          <div class="input-flex">
+                            <div class="input-wrap input-dash">
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">m</span>
+                              <span class="bridge">~</span>
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">m</span>
+                            </div>
+                            <span class="result">증감: 0.1</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="bridge">
+                      <p class="s-tit">노면표시</p>
+                      <ul class="form-list">
+                        <li>
+                          <span class="label">차선 색깔</span>
+                          <div class="input-flex">
+                            <ul class="chk-list">
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-2-1" checked>
+                                  <label for="chk-2-1">백색</label>
+                                </span>
+                              </li>
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-2-2">
+                                  <label for="chk-2-2">황색</label>
+                                </span>
+                              </li>
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-2-3">
+                                  <label for="chk-2-3">청색</label>
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="label">차선 종류</span>
+                          <div class="input-flex">
+                            <ul class="chk-list">
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-3-1">
+                                  <label for="chk-3-1">실선</label>
+                                </span>
+                              </li>
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-3-2">
+                                  <label for="chk-3-2">점선</label>
+                                </span>
+                              </li>
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-3-3" checked>
+                                  <label for="chk-3-3">이중 실선</label>
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="label">차선 외 노면표시 종류</span>
+                          <div class="input-flex">
+                            <ul class="chk-list">
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-4-1" checked>
+                                  <label for="chk-4-1">해당없음</label>
+                                </span>
+                              </li>
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-4-2">
+                                  <label for="chk-4-2">화살표</label>
+                                </span>
+                              </li>
+                              <li>
+                                <span class="chk-base">
+                                  <input type="checkbox" id="chk-4-3">
+                                  <label for="chk-4-3">기호</label>
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p class="b-tit">Layer 4 : 시나리오 참여자 데이터</p>
+                      <p class="s-tit">목표 자동차 또는 목표객체</p>
+                      <ul class="form-list">
+                        <li>
+                          <span class="label essential">상황발생시 종방향 속도</span>
+                          <div class="input-flex">
+                            <div class="input-wrap input-dash">
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">Km/h</span>
+                              <span class="bridge">~</span>
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">Km/h</span>
+                              <a href="javascript:void(0);" class="f-btn" data-id="filter1">입력값 추천 보기</a>
+                            </div>
+                            <span class="result">증감: 1</span>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="label essential">종방향 가속도</span>
+                          <div class="input-flex">
+                            <div class="input-wrap input-dash">
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">Km/h</span>
+                              <span class="bridge">~</span>
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">Km/h</span>
+                              <a href="javascript:void(0);" class="f-btn" data-id="filter2">입력값 추천 보기</a>
+                            </div>
+                            <span class="result">증감: 1</span>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="label essential">차로이탈 시 횡방향 속도</span>
+                          <div class="input-flex">
+                            <div class="input-wrap input-dash">
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">Km/h</span>
+                              <span class="bridge">~</span>
+                              <input type="text" class="input-base" value="0" />
+                              <span class="unit">Km/h</span>
+                              <a href="javascript:void(0);" class="f-btn" data-id="filter3">입력값 추천 보기</a>
+                            </div>
+                            <span class="result">증감: 1</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li id="tab2">
+                <div class="code-form" style="min-height:520px;">
+
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- .content-wrap -->
+    </div><!-- #container -->
+
+    <div class="popup-wrap z-anim mfp-hide" id="popup-filter" data-width="1320">
+      <div class="con-wrap">
+        <div class="tab-base tp2" style="width:264px;">
+           <ul>
+            <li class="on"><a href="#tab-f1">시나리오 상세정보</a></li>
+            <li><a href="#tab-f2">ODD 상세정보</a></li>
+          </ul>
+        </div> 
+        <ul class="panel-base">
+          <li id="tab-f1">
+            <div class="filter-wrap">
+              <div class="filter-top">
+                <div class="input-wrap w-del w-search">
+                  <input type="text" class="input-base" placeholder="검색어를 입력하세요.">
+                  <button class="btn-del">삭제</button>
+                  <button class="btn-search">검색</button>
+                </div>
+                <a href="#" class="btn-refresh">새로고침</a>
+              </div>
+              <ul class="filter-item">
+                <li>
+                  <div class="top-area">
+                    <span class="label">Layer</span>
+                    <span class="total"><em>1</em>/6</span>
+                  </div>
+                  <div class="chk-area c-scrollbar">
+                    <ul class="chk-list vertical">
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-1-1">
+                          <label for="chk-1-1">Layer 1</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-1-2">
+                          <label for="chk-1-2">Layer 2</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-1-3" checked>
+                          <label for="chk-1-3">Layer 3</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-1-4">
+                          <label for="chk-1-4">일이삼사오</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="top-area">
+                    <span class="label">항목</span>
+                    <span class="total"><em>1</em>/11 </span>
+                  </div>
+                  <div class="chk-area c-scrollbar">
+                    <ul class="chk-list vertical">
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-2-1">
+                          <label for="chk-2-1">Layer 1</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-2-2">
+                          <label for="chk-2-2">Layer 2</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-2-3" checked>
+                          <label for="chk-2-3">Layer 3</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-2-4">
+                          <label for="chk-2-4">일이삼사오</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="top-area">
+                    <span class="label">요소</span>
+                    <span class="total"><em>1</em>/11 </span>
+                  </div>
+                  <div class="chk-area c-scrollbar">
+                    <ul class="chk-list vertical">
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-3-1" checked>
+                          <label for="chk-3-1">도로구간 종류</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-3-2">
+                          <label for="chk-3-2">일이삼사아오육칠팔구십일이삼사아오육칠팔</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="top-area">
+                    <span class="label">세부속성</span>
+                    <span class="total"><em>1</em>/11 </span>
+                  </div>
+                  <div class="chk-area c-scrollbar">
+                    <ul class="chk-list vertical">
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-4-1" checked>
+                          <label for="chk-4-1">차도</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-4-2">
+                          <label for="chk-4-2">길어깨</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-4-3">
+                          <label for="chk-4-3">측도</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-4-4">
+                          <label for="chk-4-4">일이삼사아오육칠팔구십일이삼사아오</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="long">
+                  <div class="top-area">
+                    <span class="label">Value</span>
+                    <span class="total"><em>1</em>/11 </span>
+                  </div>
+                  <div class="chk-area">
+                    <ul class="value-list">
+                      <li>
+                        <span class="label">최대 종단경사(%)</span>
+                        <ul class="item">
+                          <li>
+                            <a href="#" class="item-selector">=</a>
+                            <div class="item-select-area">
+                              <ul>
+                                <li class="on"><a href="#">=</a></li>
+                                <li><a href="#">&lt;&gt;</a></li>
+                                <li><a href="#">&gt;</a></li>
+                                <li><a href="#">&lt;</a></li>
+                                <li><a href="#">&lt;=</a></li>
+                                <li><a href="#">&gt;=</a></li>
+                                <li><a href="#">between</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><input type="number" value="3" readonly /></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="label">차로수</span>
+                        <ul class="item">
+                          <li>
+                            <a href="#" class="item-selector between">between</a>
+                            <div class="item-select-area">
+                              <ul>
+                                <li class="on"><a href="#">=</a></li>
+                                <li><a href="#">&lt;&gt;</a></li>
+                                <li><a href="#">&gt;</a></li>
+                                <li><a href="#">&lt;</a></li>
+                                <li><a href="#">&lt;=</a></li>
+                                <li><a href="#">&gt;=</a></li>
+                                <li><a href="#">between</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><input type="number" value="1" readonly /></li>
+                          <li>
+                            <a href="#" class="item-and">and</a>
+                          </li>
+                          <li><input type="number" value="3" readonly /></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="label">최소 차로폭(m)</span>
+                        <ul class="item">
+                          <li>
+                            <a href="#" class="item-selector between">between</a>
+                            <div class="item-select-area">
+                              <ul>
+                                <li class="on"><a href="#">=</a></li>
+                                <li><a href="#">&lt;&gt;</a></li>
+                                <li><a href="#">&gt;</a></li>
+                                <li><a href="#">&lt;</a></li>
+                                <li><a href="#">&lt;=</a></li>
+                                <li><a href="#">&gt;=</a></li>
+                                <li><a href="#">between</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><input type="number" value="1" readonly /></li>
+                          <li>
+                            <a href="#" class="item-and">and</a>
+                          </li>
+                          <li><input type="number" value="3" readonly /></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="label">최소 오른쪽 길어깨 폭(m)</span>
+                        <ul class="item">
+                          <li>
+                            <a href="#" class="item-selector">=</a>
+                            <div class="item-select-area">
+                              <ul>
+                                <li class="on"><a href="#">=</a></li>
+                                <li><a href="#">&lt;&gt;</a></li>
+                                <li><a href="#">&gt;</a></li>
+                                <li><a href="#">&lt;</a></li>
+                                <li><a href="#">&lt;=</a></li>
+                                <li><a href="#">&gt;=</a></li>
+                                <li><a href="#">between</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><input type="number" value="3" readonly /></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="label">노면표시 성능 수준(%)</span>
+                        <ul class="item">
+                          <li>
+                            <a href="#" class="item-selector">&lt;=</a>
+                            <div class="item-select-area">
+                              <ul>
+                                <li class="on"><a href="#">=</a></li>
+                                <li><a href="#">&lt;&gt;</a></li>
+                                <li><a href="#">&gt;</a></li>
+                                <li><a href="#">&lt;</a></li>
+                                <li><a href="#">&lt;=</a></li>
+                                <li><a href="#">&gt;=</a></li>
+                                <li><a href="#">between</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><input type="number" value="3" readonly /></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="label">도로 제한속도(km/h)</span>
+                        <ul class="item">
+                          <li>
+                            <a href="#" class="item-selector">&gt;=</a>
+                            <div class="item-select-area">
+                              <ul>
+                                <li class="on"><a href="#">=</a></li>
+                                <li><a href="#">&lt;&gt;</a></li>
+                                <li><a href="#">&gt;</a></li>
+                                <li><a href="#">&lt;</a></li>
+                                <li><a href="#">&lt;=</a></li>
+                                <li><a href="#">&gt;=</a></li>
+                                <li><a href="#">between</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><input type="number" value="3" readonly /></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="label">일이삼사오육칠팔구십일이삼사오육칠팔구십</span>
+                        <ul class="item">
+                          <li>
+                            <a href="#" class="item-selector between">between</a>
+                            <div class="item-select-area">
+                              <ul>
+                                <li class="on"><a href="#">=</a></li>
+                                <li><a href="#">&lt;&gt;</a></li>
+                                <li><a href="#">&gt;</a></li>
+                                <li><a href="#">&lt;</a></li>
+                                <li><a href="#">&lt;=</a></li>
+                                <li><a href="#">&gt;=</a></li>
+                                <li><a href="#">between</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><input type="number" value="1" readonly /></li>
+                          <li>
+                            <a href="#" class="item-selector and">and</a>
+                          </li>
+                          <li><input type="number" value="3" readonly /></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div><!-- .filter-wrap -->
+          </li>
+          <li id="tab-f2">
+            <div class="filter-wrap">
+              <div class="filter-top">
+                <div class="input-wrap w-del w-search">
+                  <input type="text" class="input-base" placeholder="검색어를 입력하세요.">
+                  <button class="btn-del">삭제</button>
+                  <button class="btn-search">검색</button>
+                </div>
+                <a href="#" class="btn-refresh">새로고침</a>
+              </div>
+              <ul class="filter-item">
+                <li>
+                  <div class="top-area">
+                    <span class="label">대분류</span>
+                    <span class="total"><em>1</em>/6</span>
+                  </div>
+                  <div class="chk-area c-scrollbar">
+                    <ul class="chk-list vertical">
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-5-1">
+                          <label for="chk-5-1">Layer 1</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-5-2">
+                          <label for="chk-5-2">Layer 2</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-5-3" checked>
+                          <label for="chk-5-3">Layer 3</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-5-4">
+                          <label for="chk-5-4">일이삼사오</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="top-area">
+                    <span class="label">중분류</span>
+                    <span class="total"><em>1</em>/11 </span>
+                  </div>
+                  <div class="chk-area c-scrollbar">
+                    <ul class="chk-list vertical">
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-6-1">
+                          <label for="chk-6-1">Layer 1</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-6-2">
+                          <label for="chk-6-2">Layer 2</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-6-3" checked>
+                          <label for="chk-6-3">Layer 3</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-6-4">
+                          <label for="chk-6-4">일이삼사오</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="top-area">
+                    <span class="label">속성</span>
+                    <span class="total"><em>1</em>/1 </span>
+                  </div>
+                  <div class="chk-area c-scrollbar">
+                    <ul class="chk-list vertical">
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-7-1" checked>
+                          <label for="chk-7-1">도로구간 종류</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-7-2">
+                          <label for="chk-7-2">일이삼사아오육칠팔구십일이삼사아오육칠팔</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="top-area">
+                    <span class="label">세부속성</span>
+                    <span class="total"><em>1</em>/11 </span>
+                  </div>
+                  <div class="chk-area c-scrollbar">
+                    <ul class="chk-list vertical">
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-8-1" checked>
+                          <label for="chk-8-1">차도</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-8-2">
+                          <label for="chk-8-2">길어깨</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-8-3">
+                          <label for="chk-8-3">측도</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-8-4">
+                          <label for="chk-8-4">일이삼사아오육칠팔구십일이삼사아오</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="long">
+                  <div class="top-area">
+                    <span class="label">Value</span>
+                    <span class="total"><em>0</em>/0 </span>
+                  </div>
+                  <div class="chk-area">
+                    <p class="no-data">조회된 데이터가 없습니다</p>
+                  </div>
+                </li>
+              </ul>
+            </div><!-- .filter-wrap -->
+          </li>
+        </ul>
+        <div class="btns-wrap t-center mt16">
+          <span class="btn-base tp1 md b-mfp-close"><a href="#">취소</a></span>
+          <span class="btn-base tp2 md"><a href="#">저장</a></span>
+        </div>
+      </div>
+    </div><!-- .popup-wrap -->
+
+    <div class="s-popup-wrap" id="filter1" data-width="576">
+      <div class="con-wrap">
+        <div class="tit-area">
+          <h3 class="tit">상황발생시 종방향 속도 입력값 추천</h3>
+          <p class="info">주행환경 DB의 통계적 범위 기준의 대상 입력값을 추천 받습니다.</p>
+        </div>
+        <button title="Close (Esc)" type="button" class="mfp-close">x</button>
+        <div class="filter-tit">
+          <span class="label"></span>
+          <span class="unit">단위(???) / 증감(???)</span>
+        </div>
+        <div class="filter-area">
+          <div class="slider-top-unit">
+            <span class="unit min">최소</span>
+            <span class="unit per25"><em>25per</em></span>
+            <span class="unit per75"><em>75per</em></span>
+            <span class="unit max">최대</span>
+          </div>
+          <div class="slider-result" style="display:none;"><span class="min"></span> 이상 ~ <span class="max"></span> 이하</div>
+          <div class="slider-horizon-area">
+            <div class="slider-shadow"></div>
+            <span class="line green" style="left:42%;"></span>
+            <span class="line red" style="left:47%;"></span>
+            <span class="line blue" style="left:50%;"></span>
+            <div class="slider-horizon"></div>
+            <input type="hidden" class="slider-horizon-amount" readonly />
+          </div>
+          <div class="slider-unit">
+            <span class="left">0</span>
+            <span class="right">100</span>
+          </div>
+          <div class="result-wrapper">
+            <ul class="result-wrap">
+              <li>
+                <span class="label">25per</span>
+                <span class="value">00.00</span>
+              </li>
+              <li>
+                <span class="label">35per</span>
+                <span class="value">00.00</span>
+              </li>
+              <li>
+                <span class="label">65per</span>
+                <span class="value">00.00</span>
+              </li>
+              <li>
+                <span class="label">75per</span>
+                <span class="value">00.00</span>
+              </li>
+            </ul>
+            <ul class="result-wrap">
+              <li>
+                <span class="label">중위값</span>
+                <span class="value blue">00.00</span>
+              </li>
+              <li>
+                <span class="label">평균값</span>
+                <span class="value green">00.00</span>
+              </li>
+              <li>
+                <span class="label">최빈값</span>
+                <span class="value red">00.00</span>
+              </li>
+            </ul>
+          </div><!-- .result-wrapper -->
+        </div>
+        <div class="filter-result">
+          <div class="input-wrap input-dash">
+            <span class="label">입력값</span>
+            <input type="text" class="input-base min" value="00.00" />
+            <span class="bridge">~</span>
+            <input type="text" class="input-base max" value="00.00" />
+          </div>
+        </div>
+        <div class="btns-wrap t-center mt16">
+          <span class="btn-base tp1 md"><a href="#">취소</a></span>
+          <span class="btn-base tp2 md"><a href="#">저장</a></span>
+        </div>
+      </div>
+    </div><!-- .s-popup-wrap -->
+
+    <div class="s-popup-wrap" id="filter2" data-width="576">
+      <div class="con-wrap">
+        <div class="tit-area">
+          <h3 class="tit">종방향 가속도 입력값 추천</h3>
+          <p class="info">주행환경 DB의 통계적 범위 기준의 대상 입력값을 추천 받습니다.</p>
+        </div>
+        <button title="Close (Esc)" type="button" class="mfp-close">x</button>
+        <div class="filter-tit">
+          <span class="label"></span>
+          <span class="unit">단위(???) / 증감(???)</span>
+        </div>
+        <div class="filter-area">
+          <div class="slider-top-unit">
+            <span class="unit min">최소</span>
+            <span class="unit per25"><em>25per</em></span>
+            <span class="unit per75"><em>75per</em></span>
+            <span class="unit max">최대</span>
+          </div>
+          <div class="slider-result" style="display:none;"><span class="min"></span> 이상 ~ <span class="max"></span> 이하</div>
+          <div class="slider-horizon-area">
+            <div class="slider-shadow"></div>
+            <span class="line green" style="left:42%;"></span>
+            <span class="line red" style="left:47%;"></span>
+            <span class="line blue" style="left:50%;"></span>
+            <div class="slider-horizon"></div>
+            <input type="hidden" class="slider-horizon-amount" readonly />
+          </div>
+          <div class="slider-unit">
+            <span class="left">0</span>
+            <span class="right">100</span>
+          </div>
+          <div class="result-wrapper">
+            <ul class="result-wrap">
+              <li>
+                <span class="label">25per</span>
+                <span class="value">00.00</span>
+              </li>
+              <li>
+                <span class="label">35per</span>
+                <span class="value">00.00</span>
+              </li>
+              <li>
+                <span class="label">65per</span>
+                <span class="value">00.00</span>
+              </li>
+              <li>
+                <span class="label">75per</span>
+                <span class="value">00.00</span>
+              </li>
+            </ul>
+            <ul class="result-wrap">
+              <li>
+                <span class="label">중위값</span>
+                <span class="value blue">00.00</span>
+              </li>
+              <li>
+                <span class="label">평균값</span>
+                <span class="value green">00.00</span>
+              </li>
+              <li>
+                <span class="label">최빈값</span>
+                <span class="value red">00.00</span>
+              </li>
+            </ul>
+          </div><!-- .result-wrapper -->
+        </div>
+        <div class="filter-result">
+          <div class="input-wrap input-dash">
+            <span class="label">입력값</span>
+            <input type="text" class="input-base min" value="00.00" />
+            <span class="bridge">~</span>
+            <input type="text" class="input-base max" value="00.00" />
+          </div>
+        </div>
+        <div class="btns-wrap t-center mt16">
+          <span class="btn-base tp1 md"><a href="#">취소</a></span>
+          <span class="btn-base tp2 md"><a href="#">저장</a></span>
+        </div>
+      </div>
+    </div><!-- .s-popup-wrap -->
+
+    <div class="s-popup-wrap" id="filter3" data-width="576">
+      <div class="con-wrap">
+        <div class="tit-area">
+          <h3 class="tit">차로이탈 시 횡방향 속도 입력값 추천</h3>
+          <p class="info">주행환경 DB의 통계적 범위 기준의 대상 입력값을 추천 받습니다.</p>
+        </div>
+        <button title="Close (Esc)" type="button" class="mfp-close">x</button>
+        <div class="filter-tit">
+          <span class="label"></span>
+          <span class="unit">단위(???) / 증감(???)</span>
+        </div>
+        <div class="filter-area">
+          <div class="slider-top-unit">
+            <span class="unit min">최소</span>
+            <span class="unit per25"><em>25per</em></span>
+            <span class="unit per75"><em>75per</em></span>
+            <span class="unit max">최대</span>
+          </div>
+          <div class="slider-result" style="display:none;"><span class="min"></span> 이상 ~ <span class="max"></span> 이하</div>
+          <div class="slider-horizon-area">
+            <div class="slider-shadow"></div>
+            <span class="line green" style="left:42%;"></span>
+            <span class="line red" style="left:47%;"></span>
+            <span class="line blue" style="left:50%;"></span>
+            <div class="slider-horizon"></div>
+            <input type="hidden" class="slider-horizon-amount" readonly />
+          </div>
+          <div class="slider-unit">
+            <span class="left">0</span>
+            <span class="right">100</span>
+          </div>
+          <div class="result-wrapper">
+            <ul class="result-wrap">
+              <li>
+                <span class="label">25per</span>
+                <span class="value">00.00</span>
+              </li>
+              <li>
+                <span class="label">35per</span>
+                <span class="value">00.00</span>
+              </li>
+              <li>
+                <span class="label">65per</span>
+                <span class="value">00.00</span>
+              </li>
+              <li>
+                <span class="label">75per</span>
+                <span class="value">00.00</span>
+              </li>
+            </ul>
+            <ul class="result-wrap">
+              <li>
+                <span class="label">중위값</span>
+                <span class="value blue">00.00</span>
+              </li>
+              <li>
+                <span class="label">평균값</span>
+                <span class="value green">00.00</span>
+              </li>
+              <li>
+                <span class="label">최빈값</span>
+                <span class="value red">00.00</span>
+              </li>
+            </ul>
+          </div><!-- .result-wrapper -->
+        </div>
+        <div class="filter-result">
+          <div class="input-wrap input-dash">
+            <span class="label">입력값</span>
+            <input type="text" class="input-base min" value="00.00" />
+            <span class="bridge">~</span>
+            <input type="text" class="input-base max" value="00.00" />
+          </div>
+        </div>
+        <div class="btns-wrap t-center mt16">
+          <span class="btn-base tp1 md"><a href="#">취소</a></span>
+          <span class="btn-base tp2 md"><a href="#">저장</a></span>
+        </div>
+      </div>
+    </div><!-- .s-popup-wrap -->
+  </div><!-- #wrapper -->
+  <script>
+    $(function(){
+      $('.f-btn').each(function(){
+        var $target = $(`#${$(this).data('id')}`);
+        $target.css({
+          left: $(this).offset().left - 38,
+          top: $(this).offset().top - ($target.outerHeight() + 10)
+        });
+      });
+    });
+
+    $('.f-btn').on('click', function(e){
+      e.preventDefault();
+      if (!$(this).hasClass('on')) {
+        $(this).addClass('on');
+        var target = $(this).data('id');
+        openSPopup(`#${target}`);
+      } else {
+        $(this).removeClass('on');
+        closeSPopup(`#${target}`);
+      }
+    });
+
+    generateFilterSlider('#filter1', {
+      min: 0,
+      max: 100,
+      values: [25, 75],
+      step: 1,
+    });
+    generateFilterSlider('#filter2', {
+      min: 0,
+      max: 100,
+      values: [25, 75],
+      step: 1,
+    });
+    generateFilterSlider('#filter3', {
+      min: 0,
+      max: 100,
+      values: [25, 75],
+      step: 1,
+    });
+
+    var queryLnb = $.urlParam('lnb');
+    var queryTab = $.urlParam('tab');
+    var queryTooltip = $.urlParam('tooltip');
+
+    if (Boolean(queryLnb)) {
+      setTimeout(function(){
+        $('.lnb-wrap .btn-menu').click();
+      }, 250);
+    }
+    if (queryTab) {
+      setTimeout(() => {
+        $(`.tab-base a[href="#tab${queryTab}"]`).click();
+      }, 50);
+    }
+    if (Boolean(queryTooltip)) {
+      setTimeout(function(){
+        $('[href="#tip-recommend"]').click();
+
+        // 툴팁 위치로 이동
+        // $('html, body').animate({ scrollTop: $('.tip-box-wrap').offset().top }, 250);
+
+        // Layer 4 : 시나리오 참여자 데이터 - 차로이탈 시 횡방향 속도로 이동
+        $('html, body').animate({ scrollTop: $('p.b-tit:contains("Layer 4 : 시나리오 참여자 데이터")').offset().top }, 250);
+        $('[data-id="filter3"]').click();
+      }, 500);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 - 컴포넌트 가이드 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/prism.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,600,700,900&display=swap&subset=korean');
+
+    .component-menu{position:fixed;right:10px;top:10px;padding:10px;background-color:#fff;border:1px solid #ddd;box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.07);border-radius:5px;z-index:2;}
+    .component-menu li{font-size:12px;margin-top:10px;cursor:pointer;}
+    .component-menu li:first-child{margin-top:0;}
+    .component-menu li.on{color:#1b64c8;font-weight:500;}
+    .component-menu .component-list{margin-bottom:10px;}
+    .component-menu .btn-base{}
+    .component-menu .btn-base a{font-size:12px;padding:5px;min-width:120px;}
+
+    pre{display:none;}
+    pre.guide{display:block;margin-top:0;}
+    .code-area{padding:20px;background-color:#eee;margin-top:10px;}
+
+    .section{margin-top:50px;position: relative;}
+    .section h2{font-size:18px;font-weight:700;font-family:'Noto Sans KR';}
+    .section h2:before{content:'· ';}
+    .code-area h3{font-size:16px;padding:0 0 10px;}
+    .code-area h3 button{display:inline-block;background-color:#333;color:#fff;padding:3px 5px;border-radius:3px;font-size:11px;}
+    #filter1{width:326px;}
+  </style>
+</head>
+<body class="c-scrollbar">
+  <div id="wrapper">
+    
+    <div id="container" class="activeLnb">
+      <div class="lnb-wrap on">
+        <h1><a href="#"></a></h1>
+        <a href="#" class="btn-menu"></a>
+        <h2 class="hide">메뉴</h2>
+        <ul class="lnb" data-active="3">
+          <li class="drive">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">주행환경 검색</span>
+            </a>
+          </li>
+          <li class="scenario">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 통계</span>
+            </a>
+          </li>
+          <li class="video">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">영상정보 등록</span>
+            </a>
+          </li>
+          <li class="history">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">영상정보 이력</span>
+            </a>
+          </li>
+          <li class="data">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">데이터 모니터링</span>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="btn-logout"></a>
+      </div><!-- .lnb-wrap -->
+      <div class="content-wrap">
+        <div class="tit-area">
+          <h3 class="data">컴포넌트 가이드</h3>
+        </div>
+<pre class="language-html guide">
+<code><link rel="stylesheet" href="css/common.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/tui-time-picker.js"></script>
+<script src="js/tui-date-picker.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/ui.js"></script></code>
+</pre>
+
+      <div class="section">
+        <h2>라디오</h2>
+
+        <div class="code-area">
+          <h3>가로형 <button>코드 보기</button></h3>
+<div class="code-box">
+  <ul class="radio-list">
+    <li>
+      <span class="radio-base">
+        <input type="radio" id="radio-wait-all" name="radio-wait" checked />
+        <label for="radio-wait-all">전체</label>
+      </span>
+    </li>
+    <li>
+      <span class="radio-base">
+        <input type="radio" id="radio-wait-yes" name="radio-wait" />
+        <label for="radio-wait-yes">Y</label>
+      </span>
+    </li>
+    <li>
+      <span class="radio-base">
+        <input type="radio" id="radio-wait-no" name="radio-wait" disabled />
+        <label for="radio-wait-no">N</label>
+      </span>
+    </li>
+  </ul>
+</div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>세로형 <button>코드 보기</button></h3>
+<div class="code-box"><ul class="radio-list vertical">
+  <li>
+    <span class="radio-base">
+      <input type="radio" id="radio-vertical-all" name="radio-vertical" checked />
+      <label for="radio-vertical-all">전체</label>
+    </span>
+  </li>
+  <li>
+    <span class="radio-base">
+      <input type="radio" id="radio-vertical-yes" name="radio-vertical" />
+      <label for="radio-vertical-yes">Y</label>
+    </span>
+  </li>
+  <li>
+    <span class="radio-base">
+      <input type="radio" id="radio-vertical-no" name="radio-vertical" />
+      <label for="radio-vertical-no">N</label>
+    </span>
+  </li>
+</ul></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>단독형 <button>코드 보기</button></h3>
+<div class="code-box"><span class="radio-base radio-only">
+  <input type="radio" id="radio-solo-all" name="radio-solo" checked />
+  <label for="radio-solo-all">전체</label>
+</span>
+
+<span class="radio-base radio-only">
+  <input type="radio" id="radio-solo-y" name="radio-solo" />
+  <label for="radio-solo-y">Y</label>
+</span>
+
+<span class="radio-base radio-only">
+  <input type="radio" id="radio-solo-n" name="radio-solo" disabled />
+  <label for="radio-solo-n">N</label>
+</span></div>
+<pre class="language-html"></pre>
+        </div>
+      </div><!-- .section -->
+
+
+      <div class="section">
+        <h2>체크박스</h2>
+
+        <div class="code-area">
+          <h3>기본 체크박스 <button>코드 보기</button></h3>
+<div class="code-box"><span class="chk-base">
+  <input type="checkbox" id="chk-1" checked />
+  <label for="chk-1">직선부</label>
+</span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>단독형 <button>코드 보기</button></h3>
+<div class="code-box"><span class="chk-base chk-only">
+  <input type="checkbox" id="chk-solo-1" checked />
+  <label for="chk-solo-1">단독 체크박스1</label>
+</span>
+
+<span class="chk-base chk-only">
+  <input type="checkbox" id="chk-solo-2" />
+  <label for="chk-solo-2">단독 체크박스2</label>
+</span>
+
+<span class="chk-base chk-only">
+  <input type="checkbox" id="chk-solo-3" disabled />
+  <label for="chk-solo-3">단독 체크박스3</label>
+</span>
+
+<span class="chk-base chk-only chk-type-2">
+  <input type="checkbox" id="chk-solo-4" checked />
+  <label for="chk-solo-4">단독 체크박스3</label>
+</span></div>
+<pre class="language-html"></pre>
+        </div>
+        
+        <div class="code-area">
+          <h3>모두 체크박스 - 테이블형 <button>코드 보기</button></h3>
+<div class="code-box"><div class="tb-wrap mt8">
+  <div class="tb-head">
+    <table summary="영상 ODD 태그 정보" class="tb-list">
+      <colgroup>
+        <col width="50" />
+        <col width="*" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">
+            <span class="chk-base chk-only chk-type-2">
+              <input type="checkbox" id="chk-odd-all" />
+              <label for="chk-odd-all">전체 체크</label>
+            </span>
+          </th>
+          <th scope="col">ODD 태그 정보</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tb-body">
+    <table summary="영상 ODD 태그 정보" class="tb-list">
+      <colgroup>
+        <col width="50" />
+        <col width="*" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td>
+            <span class="chk-base chk-only">
+              <input type="checkbox" id="chk-odd-1" />
+              <label for="chk-odd-1">체크1</label>
+            </span>
+          </td>
+          <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="chk-base chk-only">
+              <input type="checkbox" id="chk-odd-2" />
+              <label for="chk-odd-2">체크2</label>
+            </span>
+          </td>
+          <td class="t-left">장면요소 > 교차로 > 횡단보도</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="chk-base chk-only">
+              <input type="checkbox" id="chk-odd-3" />
+              <label for="chk-odd-3">체크3</label>
+            </span>
+          </td>
+          <td class="t-left">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 <br />일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="chk-base chk-only">
+              <input type="checkbox" id="chk-odd-4" />
+              <label for="chk-odd-4">체크4</label>
+            </span>
+          </td>
+          <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="chk-base chk-only">
+              <input type="checkbox" id="chk-odd-5" />
+              <label for="chk-odd-5">체크5</label>
+            </span>
+          </td>
+          <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="chk-base chk-only">
+              <input type="checkbox" id="chk-odd-6" />
+              <label for="chk-odd-6">체크6</label>
+            </span>
+          </td>
+          <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="chk-base chk-only">
+              <input type="checkbox" id="chk-odd-7" />
+              <label for="chk-odd-7">체크7</label>
+            </span>
+          </td>
+          <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="chk-base chk-only">
+              <input type="checkbox" id="chk-odd-8" />
+              <label for="chk-odd-8">체크8</label>
+            </span>
+          </td>
+          <td class="t-left">장면요소 > 교차로 > 횡단보도</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="chk-base chk-only">
+              <input type="checkbox" id="chk-odd-9" />
+              <label for="chk-odd-9">체크9</label>
+            </span>
+          </td>
+          <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="chk-base chk-only">
+              <input type="checkbox" id="chk-odd-10" />
+              <label for="chk-odd-10">체크10</label>
+            </span>
+          </td>
+          <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div><!-- .tb-wrap --></div>
+<script>var callbackChkTypeOddTag = function(checked){
+  console.log('테이블 전체체크 유무 : ', checked)
+};
+GUI.checkAllUI('#chk-odd-all', callbackChkTypeOddTag);</script>
+<pre class="language-html"></pre>
+<pre class="language-javascript"></pre>
+        </div>
+      </div><!-- .section -->
+
+
+
+      <div class="section">
+        <h2>셀렉트박스</h2>
+        <div class="code-area">
+          <h3>기본 셀렉트박스 <button>코드 보기</button></h3>
+<div class="code-box"><span class="select-base">
+  <span class="value"></span>
+  <select>
+    <option value="0" selected>선택</option>
+    <option value="1">Value 1</option>
+    <option value="2">Value 2</option>
+    <option value="3">Value 3</option>
+  </select>
+</span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>기본 셀렉트박스 - 비활성화 <button>코드 보기</button></h3>
+<div class="code-box"><span class="select-base disabled">
+  <span class="value"></span>
+  <select>
+    <option value="0" selected>선택</option>
+    <option value="1">Value 1</option>
+    <option value="2">Value 2</option>
+    <option value="3">Value 3</option>
+  </select>
+</span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <!--
+
+        <div class="code-area">
+          <h3>커스텀 셀렉트박스 - 옵션에 선택 포함 <button>코드 보기</button></h3>
+<div class="code-box"><div class="select-box">
+  <a href="#" class="value">선택</a>
+  <ul>
+    <li class="placeholder"><a href="#">선택</a></li>
+    <li><a href="#">Value 1</a></li>
+    <li><a href="#">Value 2</a></li>
+  </ul>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>커스텀 셀렉트박스 - 선택값 있음 <button>코드 보기</button></h3>
+<div class="code-box"><div class="select-box" data-active="1">
+  <a href="#" class="value"></a>
+  <ul>
+    <li><a href="#">Value 1</a></li>
+    <li><a href="#">Value 2</a></li>
+  </ul>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>커스텀 셀렉트박스 - 비활성화 <button>코드 보기</button></h3>
+<div class="code-box"><div class="select-box disabled" data-active="1">
+  <a href="#" class="value"></a>
+  <ul>
+    <li><a href="#">Value 1</a></li>
+    <li><a href="#">Value 2</a></li>
+  </ul>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+        -->
+      </div><!-- .section -->
+
+
+      <div class="section">
+        <h2>인풋</h2>
+
+        <div class="code-area">
+          <h3>기본 <button>코드 보기</button></h3>
+<div class="code-box"><div class="input-wrap w-del">
+  <input type="text" class="input-base" placeholder="Breadcrumb">
+  <button class="btn-del">삭제</button>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>기본 - 값 있음 <button>코드 보기</button></h3>
+<div class="code-box"><div class="input-wrap w-del">
+  <input type="text" class="input-base" placeholder="Breadcrumb" value="Enabled">
+  <button class="btn-del">삭제</button>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>기본 - 값 있음 + 비활성화 <button>코드 보기</button></h3>
+<div class="code-box"><div class="input-wrap w-del">
+  <input type="text" class="input-base disabled" placeholder="Breadcrumb" value="Disabled" readonly>
+  <button class="btn-del">삭제</button>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>기본 - 값 있음 + 에러 <button>코드 보기</button></h3>
+<div class="code-box"><div class="input-wrap w-del error">
+  <input type="text" class="input-base" placeholder="Breadcrumb" value="Error">
+  <button class="btn-del">삭제</button>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>검색 <button>코드 보기</button></h3>
+<div class="code-box"><div class="input-wrap w-del w-search">
+  <input type="text" class="input-base" placeholder="Breadcrumb">
+  <button class="btn-del">삭제</button>
+  <button class="btn-search">검색</button>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>검색 - 값 있음 <button>코드 보기</button></h3>
+<div class="code-box"><div class="input-wrap w-del w-search">
+  <input type="text" class="input-base" placeholder="Breadcrumb" value="Enabled">
+  <button class="btn-del">삭제</button>
+  <button class="btn-search">검색</button>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>유저 <button>코드 보기</button></h3>
+<div class="code-box"><div class="input-wrap w-del w-user">
+  <i class="ico-user"></i>
+  <input type="text" class="input-base" placeholder="Breadcrumb">
+  <button class="btn-del">삭제</button>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>유저 - 값 있음 <button>코드 보기</button></h3>
+<div class="code-box"><div class="input-wrap w-del w-user">
+  <i class="ico-user"></i>
+  <input type="text" class="input-base" placeholder="Breadcrumb" value="Enabled">
+  <button class="btn-del">삭제</button>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+                
+      </div><!-- .section -->
+
+      <div class="section">
+        <h2>텍스트에리어</h2>
+
+        <div class="code-area">
+          <h3>기본형 <button>코드 보기</button></h3>
+<div class="code-box"><textarea class="textarea-base" placeholder="Breadcrumb"></textarea></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>비활성화 <button>코드 보기</button></h3>
+<div class="code-box"><textarea class="textarea-base" placeholder="Breadcrumb" disabled></textarea></div>
+<pre class="language-html"></pre>
+        </div>
+      </div><!-- .section -->
+
+      <div class="section" style="z-index:2;">
+        <h2>데이트피커</h2>
+
+        <div class="code-area">
+          <h3>타입 1 <button>코드 보기</button></h3>
+<div class="code-box"><div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom">
+  <input type="text" id="datepicker-input" aria-label="Date-Time">
+  <span class="tui-ico-date"></span>
+</div>
+<div class="date_wrapper" style="margin-top: -1px;"></div></div>
+
+<style>
+  .date_wrapper{position: relative;z-index:1;}
+</style>
+
+<script>tui.DatePicker.localeTexts['customKey'] = {
+  titles: {
+      // days
+      DD: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      // daysShort
+      D: ['일', '월', '화', '수', '목', '금', '토'],
+      // months
+      MMMM: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+      // monthsShort
+      MMM: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+  },
+  titleFormat: 'yyyy.MMM',
+  todayFormat: '오늘 : yyyy.MMMM.dd',
+  date: 'Date',
+  time: 'Time'
+};
+
+var datepicker = new tui.DatePicker('.date_wrapper', {
+  language: 'customKey',
+  date: new Date(),
+  input: {
+    element: '#datepicker-input',
+    format: 'yyyy-MM-dd'
+  }
+});</script>
+<pre class="language-html direct"><code><div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom">
+  <input type="text" id="datepicker-input" aria-label="Date-Time">
+  <span class="tui-ico-date"></span>
+</div>
+<div class="date_wrapper" style="margin-top: -1px;"></div></code></pre>
+<pre class="language-javascript"></pre>
+        </div>
+
+
+
+        <div class="code-area">
+          <h3>타입 2 <button>코드 보기</button></h3>
+<div class="code-box"><div class="input-wrap input-datepicker">
+  <div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom">
+    <input id="startpicker-input1" type="text" aria-label="Date">
+    <span class="tui-ico-date"></span>
+    <div id="startpicker-container1" style="margin-left: -1px;"></div>
+  </div>
+  <div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom">
+    <input id="endpicker-input1" type="text" aria-label="Date">
+    <span class="tui-ico-date"></span>
+    <div id="endpicker-container1" style="margin-left: -1px;"></div>
+  </div>
+</div></div>
+
+<script>var today1 = new Date();
+var picker1 = tui.DatePicker.createRangePicker({
+  language: 'customKey',
+  startpicker: {
+    date: today1,
+    input: '#startpicker-input1',
+    container: '#startpicker-container1'
+  },
+  endpicker: {
+    date: today1,
+    input: '#endpicker-input1',
+    container: '#endpicker-container1'
+  },
+  selectableRanges: [
+    [today1, new Date(today1.getFullYear() + 1, today1.getMonth(), today1.getDate())]
+  ],
+  format: 'YYYY-MM-dd',
+  // showAlways: true,
+});
+
+picker1.on('change:end', () => {
+    console.log(123);
+})</script>
+<pre class="language-html direct"><code><div class="input-wrap input-datepicker">
+  <div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom">
+    <input id="startpicker-input1" type="text" aria-label="Date">
+    <span class="tui-ico-date"></span>
+    <div id="startpicker-container1" style="margin-left: -1px;"></div>
+  </div>
+  <span class="bridge">~</span>
+  <div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom">
+    <input id="endpicker-input1" type="text" aria-label="Date">
+    <span class="tui-ico-date"></span>
+    <div id="endpicker-container1" style="margin-left: -1px;"></div>
+  </div>
+</div></code></pre>
+<pre class="language-javascript"></pre>
+        </div>
+      </div><!-- .section -->
+
+      <div class="section">
+        <h2>버튼</h2>
+        <div class="code-area">
+          <h3>버튼 마크업 <button>코드 보기</button></h3>
+<div class="code-box"><span class="btn-base tp1 md"><a href="#">버튼 - a</a></span>
+<span class="btn-base tp1 md"><input type="button" value="버튼 - input" /></span>
+<span class="btn-base tp1 md"><button>버튼 - button</button></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button XL <button>코드 보기</button></h3>
+<div class="code-box"><span class="btn-base tp2 xl"><a href="#"><span class="ico upload">영상 업로드</span></a></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button L <button>코드 보기</button></h3>
+<div class="code-box"><div class="btns-wrap">
+  <span class="btn-base tp1 lg"><a href="#">취소</a></span>
+  <span class="btn-base tp2 lg"><a href="#">저장</a></span>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button M <button>코드 보기</button></h3>
+<div class="code-box"><div class="btns-wrap">
+  <span class="btn-base tp1 md btn-file"><a href="#">파일선택</a><input type="file" value="파일선택" /></span>
+  <span class="btn-base tp2 md"><a href="#">저장</a></span>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button M - 비활성화 <button>코드 보기</button></h3>
+<div class="code-box"><div class="btns-wrap">
+  <span class="btn-base tp1 md btn-file disabled"><a href="#">파일선택</a><input type="file" value="파일선택" /></span>
+  <span class="btn-base tp2 md disabled"><a href="#">저장</a></span>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button MR <button>코드 보기</button></h3>
+<div class="code-box"><span class="radio-base radio-button">
+  <input type="radio" id="radio_button_mr" name="radio_button">
+  <label for="radio_button_mr">고정식 영상</label>
+</span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button MS <button>코드 보기</button></h3>
+<div class="code-box"><span class="btn-base tp2 ms"><a href="#"><span class="ico search">검색</span></a></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button S <button>코드 보기</button></h3>
+<div class="code-box"><span class="btn-base tp1 sm"><a href="#">Text</a></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button S - 비활성화 <button>코드 보기</button></h3>
+<div class="code-box"><span class="btn-base tp1 sm disabled"><a href="#">Text</a></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button SI <button>코드 보기</button></h3>
+<div class="code-box"><span class="btn-base si"><a href="#">수정</a></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button ST <button>코드 보기</button></h3>
+<div class="code-box"><span class="btn-base st"><a href="#">Text Link</a></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button ETC <button>코드 보기</button></h3>
+<div class="code-box"><span class="btn-base tp2 ms green"><a href="#"><span class="ico request front">공개신청</span></a></span>
+<span class="btn-base tp2 ms green"><a href="#"><span class="ico retract front">공개철회 신청</span></a></span>
+<span class="btn-base tp2 ms"><a href="#"><span class="ico search front">조회</span></a></span>
+<span class="btn-base tp2 ms"><a href="#"><span class="ico search">검색</span></a></span>
+<span class="btn-base tp1 md search"><a href="#"><span class="ico search front">조회</span></a></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>Button Group <button>코드 보기</button></h3>
+<div class="code-box"><div class="btns-wrap">
+  <span class="btn-base tp1 md"><a href="#"><span class="ico del front">삭제</span></a></span>
+  <span class="btn-base tp2 md"><a href="#"><span class="ico modify front">수정</span></a></span>
+  <span class="btn-base tp2 md"><a href="#"><span class="ico view front">목록</span></a></span>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+      </div><!-- .section -->
+
+      <div class="section">
+        <h2>Range Slider</h2>
+
+        <div class="code-area">
+          <h3>Horizontal <button>코드 보기</button></h3>
+<div class="code-box"><div class="filter-area" id="filter1">
+  <div class="slider-top-unit">
+    <span class="unit min">최소</span>
+    <span class="unit per25"><em>25per</em></span>
+    <span class="unit per75"><em>75per</em></span>
+    <span class="unit max">최대</span>
+  </div>
+  <div class="slider-result" style="display:none;"><span class="min"></span> 이상 ~ <span class="max"></span> 이하</div>
+  <div class="slider-horizon-area">
+    <div class="slider-shadow"></div>
+    <span class="line green" style="left:42%;"></span>
+    <span class="line red" style="left:47%;"></span>
+    <span class="line blue" style="left:50%;"></span>
+    <div class="slider-horizon"></div>
+    <input type="hidden" class="slider-horizon-amount" readonly />
+  </div>
+  <div class="slider-unit">
+    <span class="left">0</span>
+    <span class="right">100</span>
+  </div>
+</div>
+
+<div class="filter-result">
+  <ul class="result-wrap">
+    <li>
+      <span class="label">25per</span>
+      <span class="value">00.00</span>
+    </li>
+    <li>
+      <span class="label">중위값</span>
+      <span class="value blue">00.00</span>
+    </li>
+    <li>
+      <span class="label">평균값</span>
+      <span class="value green">00.00</span>
+    </li>
+    <li>
+      <span class="label">최빈값</span>
+      <span class="value red">00.00</span>
+    </li>
+    <li>
+      <span class="label">75per</span>
+      <span class="value">00.00</span>
+    </li>
+  </ul>
+  <div class="input-wrap input-dash">
+    <span class="label">입력값</span>
+    <input type="text" class="input-base min" value="00.00" />
+    <span class="bridge">~</span>
+    <input type="text" class="input-base max" value="00.00" />
+  </div>
+</div></div>
+<script>generateFilterSlider('#filter1', {
+  min: 0,
+  max: 100,
+  values: [25, 75],
+  step: 1,
+});</script>
+
+<pre class="language-html"></pre>
+<pre class="language-javascript"></pre>
+        </div>
+      </div><!-- .section -->
+
+      <div class="section">
+        <h2>탭</h2>
+        <div class="code-area">
+          <h3>타입1 <button>코드 보기</button></h3>
+<div class="code-box"><div class="tab-base" style="width: 400px;">
+  <ul>
+    <li class="on"><a href="#tab1-1">시나리오 목록</a></li>
+    <li><a href="#tab1-2">위치 기반 검색</a></li>
+  </ul>
+</div>
+<ul class="panel-base">
+  <li id="tab1-1">1-1</li>
+  <li id="tab1-2">1-2</li>
+</ul></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>타입2 <button>코드 보기</button></h3>
+<div class="code-box"><div class="tab-base tp2" style="width:264px;">
+  <ul>
+   <li class="on"><a href="#tab2-1">시나리오 상세정보</a></li>
+   <li><a href="#tab2-2">ODD 상세정보</a></li>
+ </ul>
+</div>
+<ul class="panel-base">
+  <li id="tab2-1">2-1</li>
+  <li id="tab2-2">2-2</li>
+</ul></div>
+<pre class="language-html"></pre>
+        </div>
+      </div><!-- .section -->
+
+      <div class="section">
+        <h2>테이블</h2>
+        <div class="code-area">
+          <h3>기본형 <button>코드 보기</button></h3>
+<div class="code-box"><div class="tb-wrap">
+  <div class="tb-head">
+    <table summary="영상정보 목록" class="tb-list">
+      <colgroup>
+        <col width="55" />
+        <col width="200" />
+        <col width="100" />
+        <col width="*" />
+        <col width="280" />
+        <col width="280" />
+        <col width="140" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">순서</th>
+          <th scope="col">수집일시</th>
+          <th scope="col">영상분류</th>
+          <th scope="col">시나리오 유형</th>
+          <th scope="col">영상 ODD태그</th>
+          <th scope="col">영상 파일</th>
+          <th scope="col">
+            <div class="th-tip">
+              <span>진행사항</span>
+              <a href="#tip-progress" class="btn-tip">팁</a>
+            </div>
+          </th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tip-area edge-right" id="tip-progress" style="right: 40px;top: 28px;">
+    <p class="s-tit">진행상황</p>
+    <a href="#" class="btn-close"></a>
+    <ul class="s-list">
+      <li>- 처리전 : 사용자가 영상 업로드를 한 상태</li>
+      <li>- 처리중 : 시스템에서 영상을 일정 주기로 조회하고 처리하는 상태</li>
+      <li>- 처리완료 : 영상분석을 완료한 상태</li>
+    </ul>
+  </div>
+  <div class="tb-body">
+    <table summary="영상 ODD 태그 정보" class="tb-list">
+      <colgroup>
+        <col width="55" />
+        <col width="200" />
+        <col width="100" />
+        <col width="*" />
+        <col width="280" />
+        <col width="280" />
+        <col width="140" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2023-07-23 14:00 ~ 14:10</td>
+          <td>
+            <span class="s-label purple">고정식</span>
+          </td>
+          <td>Cut-in&out 반복, Cut-through, Cut-in, Cut-out,Cut-in&out 반복, Cut-through, Cut-in, Cut-outCut-in&out 반복, Cut-through, Cut-in, Cut-out, Cut-in, Cut-out, Cut-in, Cut-out</td>
+          <td>
+            <a href="#" class="multi-2">터널</a>
+          </td>
+          <td>
+            <ul>
+              <li><a href="#">20230728영상20230728</a></li>
+              <li><a href="#">20230728영상20230728</a></li>
+            </ul>
+          </td>
+          <td>
+            <span class="s-state before">처리전</span>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2023-07-23 14:00 ~ 14:10</td>
+          <td>
+            <span class="s-label purple">고정식</span>
+          </td>
+          <td>Cut-in&out 반복, Cut-through, Cut-in, Cut-out,Cut-in&out 반복</td>
+          <td>
+            <a href="#" class="multi-2">터널</a>
+          </td>
+          <td>
+            <ul>
+              <li><a href="#">20230728영상20230728</a></li>
+            </ul>
+          </td>
+          <td>
+            <span class="s-state before">처리전</span>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>2023-07-23 14:00 ~ 14:10</td>
+          <td>
+            <span class="s-label green">이동식</span>
+          </td>
+          <td>Cut-in, Cut-out,Cut-in&out 반복</td>
+          <td>
+            <a href="#" class="multi-2">터널, 포장, 톨게이트</a>
+          </td>
+          <td>
+            <ul>
+              <li><a href="#" class="ellipsis">20자이상 말줄임 20자이상 말줄임 20자이상 말줄임 20자이상 말줄임 20자이상 말줄임 </a></li>
+            </ul>
+          </td>
+          <td>
+            <span class="s-state before">처리전</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+      </div><!-- .section -->
+
+      <div class="section">
+        <h2>트리 메뉴</h2>
+        <div class="code-area">
+          <h3>기본형 <button>코드 보기</button></h3>
+<div class="code-box"><div class="tree-wrap">
+  <dl>
+    <dt>장면요소</dt>
+    <dd>
+      <ul class="tree-list">
+        <li>
+          <div class="inner">
+            <a href="#" class="btn-toggle"></a>
+            <ul class="chk-wrap">
+              <li>
+                <span class="chk-base">
+                  <input type="checkbox" id="chk-a-1" />
+                  <label for="chk-a-1">구역</label>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="on">
+          <div class="inner">
+            <a href="#" class="btn-toggle"></a>
+            <ul class="chk-wrap">
+              <li>
+                <span class="chk-base">
+                  <input type="checkbox" id="chk-a-2" />
+                  <label for="chk-a-2">주행가능 영역</label>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <ul class="tree-list">
+            <li>
+              <div class="inner">
+                <a href="#" class="btn-toggle"></a>
+                <ul class="chk-wrap">
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-a-2-1" />
+                      <label for="chk-a-2-1">주행주행가능 도로유형</label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="on">
+              <div class="inner">
+                <a href="#" class="btn-toggle"></a>
+                <ul class="chk-wrap">
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-a-2-2" />
+                      <label for="chk-a-2-2">주행가능 기하구조</label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <ul class="tree-list">
+                <li class="on">
+                  <div class="inner">
+                    <a href="#" class="btn-toggle"></a>
+                    <ul class="chk-wrap">
+                      <li>
+                        <span class="chk-base w-filter">
+                          <a href="javascript:;" class="btn-filter" onclick="openSPopup('#filter2');"></a>
+                          <input type="checkbox" id="chk-a-2-2-1" />
+                          <label for="chk-a-2-2-1">수평면</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <ul class="tree-list">
+                    <li>
+                      <div class="inner">
+                        <ul class="chk-wrap">
+                          <li>
+                            <span class="chk-base">
+                              <input type="checkbox" id="chk-a-2-2-1-1" />
+                              <label for="chk-a-2-2-1-1">직선부</label>
+                            </span>
+                          </li>
+                          <li>
+                            <span class="chk-base">
+                              <input type="checkbox" id="chk-a-2-2-1-2" disabled />
+                              <label for="chk-a-2-2-1-2">곡선부(곡률반경)</label>
+                            </span>
+                            <div class="res-area">
+                              <span class="res">100m ~ 500m</span>
+                              <a href="#" class="btn-delete">삭제</a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="inner">
+                    <ul class="chk-wrap">
+                      <li>
+                        <span class="chk-base w-filter">
+                          <a href="javascript:;" class="btn-filter" onclick="openSPopup('#filter3');"></a>
+                          <input type="checkbox" id="chk-a-2-2-2" disabled />
+                          <label for="chk-a-2-2-2">수직면</label>
+                        </span>
+                        <div class="res-area">
+                          <span class="res">+3% ~ +5%</span>
+                          <a href="#" class="btn-delete">삭제</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="on">
+                  <div class="inner">
+                    <a href="#" class="btn-toggle"></a>
+                    <ul class="chk-wrap">
+                      <li>
+                        <span class="chk-base w-filter">
+                          <a href="javascript:;" class="btn-filter" onclick="openSPopup('#filter4');"></a>
+                          <input type="checkbox" id="chk-a-2-3-1" />
+                          <label for="chk-a-2-3-1">횡단면</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <ul class="tree-list">
+                    <li>
+                      <div class="inner">
+                        <ul class="chk-wrap">
+                          <li>
+                            <span class="chk-base">
+                              <input type="checkbox" id="chk-a-2-3-1-1" disabled />
+                              <label for="chk-a-2-3-1-1">차로수</label>
+                            </span>
+                            <div class="res-area">
+                              <span class="res">1차로~ 7차로</span>
+                              <a href="#" class="btn-delete">삭제</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="chk-base">
+                              <input type="checkbox" id="chk-a-2-3-1-2" />
+                              <label for="chk-a-2-3-1-2">차로폭</label>
+                            </span>
+                          </li>
+                          <li>
+                            <span class="chk-base">
+                              <input type="checkbox" id="chk-a-2-3-1-3" disabled />
+                              <label for="chk-a-2-3-1-3">횡단경사</label>
+                            </span>
+                            <div class="res-area">
+                              <span class="res">0m ~ 5m</span>
+                              <a href="#" class="btn-delete">삭제</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="chk-base">
+                              <input type="checkbox" id="chk-a-2-3-1-4"  disabled/>
+                              <label for="chk-a-2-3-1-4">최대편경사</label>
+                            </span>
+                            <div class="res-area">
+                              <span class="res">5% ~ 6%</span>
+                              <a href="#" class="btn-delete">삭제</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="chk-base">
+                              <input type="checkbox" id="chk-a-2-3-1-5" />
+                              <label for="chk-a-2-3-1-5">측방여유폭</label>
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="inner">
+                <a href="#" class="btn-toggle"></a>
+                <ul class="chk-wrap">
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-a-2-3" />
+                      <label for="chk-a-2-3">주행가능차로 노면표시 및 차선 속성</label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="on">
+              <div class="inner">
+                <a href="#" class="btn-toggle"></a>
+                <ul class="chk-wrap">
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-a-2-4" />
+                      <label for="chk-a-2-4">주행가능 차로 속성</label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <ul class="tree-list">
+                <li class="on">
+                  <div class="inner">
+                    <a href="#" class="btn-toggle"></a>
+                    <ul class="chk-wrap">
+                      <li>
+                        <span class="chk-base">
+                          <input type="checkbox" id="chk-a-2-4-1" />
+                          <label for="chk-a-2-4-1">차로유형</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </dd>
+  </dl>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+      </div><!-- .section -->
+
+      <div class="section">
+        <h2>팝업 - <span>magnific popup</span></h2>
+
+        <div class="code-area">
+          <h3>팝업 호출 <button>코드 보기</button></h3>
+<div class="code-box"><span class="btn-base tp1 md block btn-popup btn-popup-anim-1"><a href="#popup-regist-odd-tag">영상 ODD 태그 정보 <i class="ico-popup"></i></a></span>
+<span class="btn-base tp1 md block btn-popup btn-popup-anim-1 mt8"><a href="#popup-statistic-info">통계정보 <i class="ico-popup"></i></a></span>
+
+<div class="popup-wrap z-anim mfp-hide" id="popup-regist-odd-tag" data-width="450">
+  <div class="con-wrap">
+    <div class="tit-area">
+      <h3 class="tit">영상 ODD 태그 정보</h3>
+    </div>
+    <div class="tb-wrap">
+      <div class="tb-head">
+        <table summary="영상 ODD 태그 정보" class="tb-list">
+          <colgroup>
+            <col width="50" />
+            <col width="*" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">순서</th>
+              <th scope="col">ODD 태그 정보</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="tb-body">
+        <table summary="영상 ODD 태그 정보" class="tb-list">
+          <colgroup>
+            <col width="50" />
+            <col width="*" />
+          </colgroup>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="t-left">장면요소 > 교차로 > 횡단보도</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td class="t-left">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 <br />일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td class="t-left">장면요소 > 교차로 > 횡단보도</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td class="t-left">장면요소 > 구역 > 간섭구역 > 터널</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div><!-- .tb-wrap -->
+    <div class="paging-area">
+      <div class="total-area">
+        <span class="label">Total</span>
+        <span class="num"><strong>19</strong>개</span>
+      </div>
+      <div class="pagination">
+        <a href="#" class="btn-prev">이전</a>
+        <a href="#" class="on">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#" class="btn-next">다음</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup-wrap z-anim mfp-hide" id="popup-statistic-info" data-width="1137">
+  <div class="con-wrap">
+    <div class="tit-area">
+      <h3 class="tit">이동식 영상</h3>
+      <span class="date">2023-07-20 14:00 ~ 14:10</span>
+    </div>
+    <div class="video-detail-area">
+      <div class="video-detail" id="mock_video1">
+        <div class="video"><img src="img/mockup/video.png" alt="" /></div>
+        <span class="btn-base tp1 sm block mt8"><a href="#">전체화면</a></span>
+        <dl class="scene-info">
+          <dt>SCENE 영상</dt>
+          <dd class="c-scrollbar">
+            <ul>
+              <li>
+                <span class="label">•터널</span>
+                <span class="time">00:10</span>
+              </li>
+              <li>
+                <span class="label">•교차로</span>
+                <span class="time">00:30</span>
+              </li>
+              <li>
+                <span class="label">•육교</span>
+                <span class="time">00:10</span>
+              </li>
+              <li>
+                <span class="label">•Label 4</span>
+                <span class="time">01:50</span>
+              </li>
+              <li>
+                <span class="label">•터널</span>
+                <span class="time">00:10</span>
+              </li>
+              <li>
+                <span class="label">•교차로</span>
+                <span class="time">00:30</span>
+              </li>
+              <li>
+                <span class="label">•육교</span>
+                <span class="time">00:10</span>
+              </li>
+              <li>
+                <span class="label">•Label 4</span>
+                <span class="time">01:50</span>
+              </li>
+              <li>
+                <span class="label">•터널</span>
+                <span class="time">00:10</span>
+              </li>
+              <li>
+                <span class="label">•교차로</span>
+                <span class="time">00:30</span>
+              </li>
+              <li>
+                <span class="label">•육교</span>
+                <span class="time">00:10</span>
+              </li>
+              <li>
+                <span class="label">•Label 4</span>
+                <span class="time">01:50</span>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </div><!-- .video-detail -->
+      <div class="video-tab">
+        <div class="tab-base">
+          <ul>
+            <li class="on"><a href="#tab1">대상구간</a></li>
+            <li><a href="#tab2">시나리오</a></li>
+          </ul>
+        </div>
+        <ul class="panel-base">
+          <li id="tab1">
+            <div class="info-area">
+              <p class="info">대상구간의 매개변수를 집계하여 통계정보를 표출합니다.</p>
+            </div>
+            <div class="chart-area c-scrollbar">
+              <ul class="chart-list">
+                <li>
+                  <p class="tit">이동식 영상 수집 현황</p>
+                  <div id="chart1" style="height: 230px; background-color: #f2f4f6; border-radius: 8px;"></div>
+                </li>
+                <li>
+                  <p class="tit">차로 변경시 속도 및 입사각 비교</p>
+                  <div id="chart2" style="height: 230px; background-color: #f2f4f6; border-radius: 8px;"></div>
+                </li>
+                <li>
+                  <p class="tit">차로 변경시 속도 및 입사각 비교</p>
+                  <div id="chart2" style="height: 230px; background-color: #f2f4f6; border-radius: 8px;"></div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li id="tab2">
+            <div class="info-area">
+              <p class="info">시나리오 유형의 매개변수를 집계하여 통계정보를 표출합니다.</p>
+              <div class="input-wrap">
+                <span class="label">유형</span>
+                <span class="select-base" style="width: 220px;">
+                  <span class="value"></span>
+                  <select>
+                    <option value="0" selected>날아오는 장애물</option>
+                    <option value="1">Value 1</option>
+                    <option value="2">Value 2</option>
+                    <option value="3">Value 3</option>
+                  </select>
+                </span>
+                <span class="btn-base tp1 md search"><a href="#"><span class="ico search front">조회</span></a></span>
+              </div>
+            </div>
+            <div class="chart-area c-scrollbar">
+              <ul class="chart-list">
+                <li>
+                  <p class="tit">고정식 영상 수집 현황</p>
+                  <div id="chart1" style="height: 230px; background-color: #f2f4f6; border-radius: 8px;"></div>
+                </li>
+                <li>
+                  <p class="tit">차로 변경시 속도 및 입사각 비교</p>
+                  <div id="chart2" style="height: 230px; background-color: #f2f4f6; border-radius: 8px;"></div>
+                </li>
+                <li>
+                  <p class="tit">차로 변경시 속도 및 입사각 비교</p>
+                  <div id="chart2" style="height: 230px; background-color: #f2f4f6; border-radius: 8px;"></div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div><!-- .video-tab -->
+    </div>
+  </div>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+      </div><!-- //section -->
+
+      <div class="section">
+        <h2>파입 업로드</h2>
+        
+        <div class="code-area">
+          <h3>파일 드래그 기능 <button>코드 보기</button></h3>
+
+<div class="code-box"><div class="file-dnd-area" id="scenario">
+  <div class="file-list-area edit mt10" style="display: none">
+    <ul>
+      <!-- <li>
+        <a href="#" class="btn-del-file">삭제</a>
+        <div class="f-detail">
+          <div class="f-info">
+            <span class="f-name">OpenScenario.xosc</span>
+            <span class="f-size">9.1 KB</span>
+          </div>
+          <span class="f-state success">성공적으로 업로드 되었습니다.</span>
+        </div>
+      </li><li>
+        <a href="#" class="btn-del-file">삭제</a>
+        <div class="f-detail">
+          <div class="f-info">
+            <span class="f-name">OpenScenario.xosc</span>
+            <span class="f-size">9.1 KB</span>
+          </div>
+          <span class="f-state error">Open Drive 파일에 대한 유효한 OpenScenario 파일이 없습니다</span>
+        </div>
+      </li>
+    -->
+    </ul>
+  </div>
+  <div class="file-dnd">
+    <div class="file-msg-area">
+      <span class="msg">파일찾기 또는 이곳에 파일을 드롭해 주세요. scenario</span>
+      <span class="info">1개씩, 파일당 최대 5MB 이하</span>
+    </div>
+    <div class="file-btn-area">
+      <span class="btn-base tp2 xl"><a href="#"><span class="ico upload">파일찾기</span></a></span>
+      <input type="file" />
+    </div>
+  </div>
+</div><!-- .file-dnd-area --></div>
+<script>$('.file-dnd-area').each(function(){
+  var $id = $(this).attr('id'); // OpenX 파일, 시나리오 엑셀 파일 구분
+  var $list = $(this).find('.file-list-area');
+  var $dnd = $(this).find('.file-dnd');
+  $dnd.on('dragover', function(e) {
+    e.preventDefault();
+  });
+
+  $dnd.on('drop', function(e) {
+    e.preventDefault();
+    var file = e.originalEvent.dataTransfer.files[0];
+    var formData = new FormData();
+    formData.append('uploadFile', file);
+    addFileList(file.name, file.size, $list, $id, $dnd);
+  });
+
+  $dnd.find('input[type="file"]').on('change', function(){
+    var file = this.files[0];
+    var fileValue = this.value.split('\\');
+    addFileList(fileValue[fileValue.length-1], file.size, $list, $id, $dnd);
+  });
+
+  $list.on('click', '.btn-del-file', function(e){
+    e.preventDefault();
+    $(this).closest('li').remove();
+    if ($id == 'openx') {
+      if ($list.find('li').length <= 1) {
+        $dnd.css('display', 'block');
+        $('#tip_openx .btn-base').removeClass('disabled');
+      }
+    }
+    if ($id == 'scenario') {
+      if ($list.find('li').length == 0) {
+        $dnd.css('display', 'block');
+        $('#tip_scenario .btn-base').removeClass('disabled');
+      }
+    }
+    if ($(this).find('li').length === 0) {
+      $(this).hide();
+    }
+  });
+});
+
+var addFileList = function(fileName, fileSize, $list, $id, $dnd){
+  var sizeInKB = (fileSize / 1024).toFixed(1);
+  $list.find('ul').append(`<li>
+      <a href="#" class="btn-del-file">삭제</a>
+      <div class="f-detail">
+        <div class="f-info">
+          <span class="f-name">${fileName}</span>
+          <span class="f-size">${sizeInKB} KB</span>
+        </div>
+        <span class="f-state success">성공적으로 업로드 되었습니다.</span>
+      </div>
+    </li>`);
+  if ($list.css('display') === 'none') {
+    $list.show();
+  }
+  if ($id == 'openx') {
+    if ($list.find('li').length >= 2) {
+      $dnd.hide();
+      $('#tip_openx .btn-base').addClass('disabled');
+    } else {
+      $dnd.show();
+      $('#tip_openx .btn-base').removeClass('disabled');
+    }
+  }
+
+  if ($id == 'scenario') {
+    if ($list.find('li').length >= 1) {
+      $dnd.hide();
+      $('#tip_scenario .btn-base').addClass('disabled');
+    } else {
+      $dnd.show();
+      $('#tip_scenario .btn-base').removeClass('disabled');
+    } 
+  }
+};</script>
+<pre class="language-html"></pre>
+<pre class="language-javascript"></pre>
+        </div>
+
+        
+      </div><!-- //section -->
+
+      <div class="section">
+        <h2>팁</h2>
+
+        <div class="code-area">
+          <h3>주행환경 검색 <button>코드 보기</button></h3>
+
+<div class="code-box"><div class="label-wrap tip">
+  <span class="label">ODD 현황</span>
+  <a href="#" class="btn-tip">팁</a>
+  <div class="tip-area">
+    <p class="txt w-filter"><i class="ico-filter"></i>아이콘 선택 시 필터 기능을 사용할 수 있습니다.</p>
+  </div>
+</div></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>팁 아이콘 <button>코드 보기</button></h3>
+
+<div class="code-box"><a href="#" class="btn-tip">팁</a>
+<a href="#" class="btn-tip gray">팁</a>
+<a href="#" class="btn-tip gray on">팁</a></div>
+<pre class="language-html"></pre>
+        </div>
+
+        
+      </div><!-- //section -->
+
+
+      <div class="section">
+        <h2>로딩</h2>
+
+        <div class="code-area">
+          <h3>로딩바 <button>코드 보기</button></h3>
+
+<div class="code-box"><span class="btn-base tp1 sm"><a href="#" onclick="loadingTest(); return false;">로딩바 호출</a></span>
+
+<!-- .loading-dimm, .loading-wrp 마크업 위치 : #wrapper 이전 -->
+<div class="loading-dimm"></div>
+<div class="loading-wrp"><div class="loader"></div></div></div>
+<script>function loadingTest() {
+  GUI.loadingUI('open');
+  setTimeout(function(){
+    GUI.loadingUI('close');
+  }, 3000);
+}</script>
+<pre class="language-html"></pre>
+<pre class="language-javascript"></pre>
+        </div>
+        
+      </div><!-- //section -->
+
+      <div class="component-menu">
+        <ul class="component-list"></ul>
+        <span class="btn-base tp1 md block"><a href="#">닫기</a></span><br />
+      </div>
+
+      </div><!-- .content-container -->
+
+    </div><!-- #container -->
+  </div><!-- #wrapper -->
+
+  <script>
+    var compMenu = $('.component-menu');
+    var compSection = $('#container .section');
+    var compPosition = [];
+
+    compSection.each(function(){
+      compMenu.find('ul').append('<li>' + $(this).find('h2').text() + '</li>');
+      compPosition.push($(this).position().top)
+    });
+    compMenu.on('click', 'li', function(){
+      $('html, body').animate({ scrollTop: compSection.eq($(this).index()).position().top }, 300);
+    });
+
+    $(window).on('load scroll', function(){
+      var scTop = $(this).scrollTop();
+      var scBottom = scTop >= $(document).height() - $(window).height();
+      for (var i = 0; i < compPosition.length; i++) {
+        if (scBottom) {
+          compMenu.find('li').eq(compPosition.length - 1).addClass('on');
+          compMenu.find('li').eq(compPosition.length - 1).siblings().removeClass('on');
+        } else {
+          if (scTop >= compPosition[i] - 10 && scTop < compPosition[i + 1]) {
+            compMenu.find('li').eq(i).addClass('on')
+            compMenu.find('li').eq(i).siblings().removeClass('on');
+          }
+        }
+      }
+    });
+
+    compMenu.find('.btn-base a').on('click', function(e){
+      e.preventDefault();
+      if ($(this).text() === '닫기') {
+        $(this).text('열기');
+        compMenu.find('.component-list').hide();
+      } else {
+        $(this).text('닫기');
+        compMenu.find('.component-list').show();
+      }
+      
+    });
+
+    setTimeout(function(){
+      // $(window).scrollTop(compSection.eq(14).position().top); // Chart.js
+      compMenu.find('.btn-base a').click();
+    }, 150);
+  </script>
+  <script src="js/prism.js"></script>
+</body>
+</html>

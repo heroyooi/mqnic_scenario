@@ -1,0 +1,11 @@
+<svg width="24" height="13" viewBox="0 0 24 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#dqmailkp7a)">
+        <rect y="3.5" width="24" height="6" rx="3" fill="#6F747D"/>
+        <rect x=".5" y="1" width="11" height="11" rx="5.5" fill="#fff" stroke="#6F747D"/>
+    </g>
+    <defs>
+        <clipPath id="dqmailkp7a">
+            <path fill="#fff" transform="translate(0 .5)" d="M0 0h24v12H0z"/>
+        </clipPath>
+    </defs>
+</svg>

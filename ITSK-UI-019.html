@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div class="map-container activeLnb">
+      <div class="lnb-wrap on">
+        <h1><a href="#"></a></h1>
+        <a href="#" class="btn-menu"></a>
+        <h2 class="hide">메뉴</h2>
+        <ul class="lnb" data-active="2">
+          <li class="search">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 검색</span>
+            </a>
+          </li>
+          <li class="makeup">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 재구성</span>
+            </a>
+          </li>
+          <li class="create">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 생성 및 업로드</span>
+            </a>
+          </li>
+          <li class="data">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 대쉬보드</span>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="btn-menual">사용자 매뉴얼</a>
+        <a href="#" class="btn-logout">로그아웃</a>
+      </div><!-- .lnb-wrap -->
+      
+      <div class="map-area" style="background:url(img/mockup/map.png) 50% 50% no-repeat;">
+        <div class="tip-box-wrap ver_map" style="top: 20px;">
+          <div class="tip-box">
+            <p>검색 필터를 통해 시나리오 상세정보, ODD를 선택하여 위치 기반 검색을 실행합니다.</p>
+            <div class="input-wrap">
+              <div class="filter">
+                <a href="#popup-filter" class="btn btn-popup-anim-1">모든필터</a>
+              </div>
+            </div>
+          </div>
+        </div><!-- .tip-box-wrap -->
+
+        <div class="zoom-wrap">
+          <a href="#" class="zoom-in">확대</a>
+          <a href="#" class="zoom-out">축소</a>
+        </div>
+      </div><!-- .map-area -->
+
+      <div class="panel-wrap" id="searchList">
+        <div class="tit-wrap">
+          <h4>재구성 목록 조회</h4>
+          <a href="#" class="btn-close"></a>
+        </div>
+        <p class="info">검색된 구간에서 수집된 영상정보의 실제 시나리오 유형을 조합한 재구성 목록을 표출합니다.</p>
+        <div class="result-frame c-scrollbar">
+          <ul class="search-list"> 
+            <li>
+              <div class="total-area">
+                <span class="label">Total</span>
+                <span class="num"><strong>50</strong>개</span>
+              </div>
+              <ul class="result-list">
+                <li class="dd-block">
+                  <dl>
+                    <dd>
+                      <table class="tb-list tb-event" summary="재구성 목록">
+                        <colgroup>
+                          <col width="55" />
+                          <col width="112" />
+                          <col width="*" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col">순서</th>
+                            <th scope="col">Link ID</th>
+                            <th scope="col">주행가능 시나리오</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td><a href="#">123456789</a></td>
+                            <td>주행</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td><a href="#">123456789</a></td>
+                            <td>Cut-in</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td><a href="#">123456789</a></td>
+                            <td><a href="#">Cut-in</a></td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td><a href="#">123456789</a></td>
+                            <td>주행 + Cut-in</td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td><a href="#">123456789</a></td>
+                            <td>주행 + Cut-out</td>
+                          </tr>
+                          <tr>
+                            <td>6</td>
+                            <td><a href="#">123456789</a></td>
+                            <td>주행 + Cut-out + Cut-out</td>
+                          </tr>
+                          <tr>
+                            <td>7</td>
+                            <td><a href="#">123456789</a></td>
+                            <td>주행 + Cut-out + Cut-in</td>
+                          </tr>
+                          <tr>
+                            <td>8</td>
+                            <td><a href="#">123456789</a></td>
+                            <td>주행 + Cut-int + Cut-out</td>
+                          </tr>
+                          <tr>
+                            <td>9999</td>
+                            <td><a href="#">123456789</a></td>
+                            <td>주행 + Cut-int + Cut-out</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </dd>
+                  </dl>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- .result-frame -->
+      </div><!-- .panel-wrap -->
+
+    </div><!-- .map-container -->
+
+    <div class="popup-wrap z-anim mfp-hide" id="popup-filter" data-width="1320">
+      <div class="con-wrap">
+        <div class="tit-area">
+          <h3 class="tit">ODD 상세정보</h3>
+        </div>
+        <div class="filter-wrap">
+          
+          <div class="filter-top">
+            <div class="input-wrap w-del w-search">
+              <input type="text" class="input-base" placeholder="검색어를 입력하세요.">
+              <button class="btn-del">삭제</button>
+              <button class="btn-search">검색</button>
+            </div>
+            <a href="#" class="btn-refresh">새로고침</a>
+          </div>
+          <ul class="filter-item">
+            <li>
+              <div class="top-area">
+                <span class="label">Layer</span>
+                <span class="total"><em>1</em>/6</span>
+              </div>
+              <div class="chk-area c-scrollbar">
+                <ul class="chk-list vertical">
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-1-1">
+                      <label for="chk-1-1">Layer 1</label>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-1-2">
+                      <label for="chk-1-2">Layer 2</label>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-1-3" checked>
+                      <label for="chk-1-3">Layer 3</label>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-1-4">
+                      <label for="chk-1-4">일이삼사오</label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="top-area">
+                <span class="label">항목</span>
+                <span class="total"><em>1</em>/11 </span>
+              </div>
+              <div class="chk-area c-scrollbar">
+                <ul class="chk-list vertical">
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-2-1">
+                      <label for="chk-2-1">Layer 1</label>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-2-2">
+                      <label for="chk-2-2">Layer 2</label>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-2-3" checked>
+                      <label for="chk-2-3">Layer 3</label>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-2-4">
+                      <label for="chk-2-4">일이삼사오</label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="top-area">
+                <span class="label">요소</span>
+                <span class="total"><em>1</em>/11 </span>
+              </div>
+              <div class="chk-area c-scrollbar">
+                <ul class="chk-list vertical">
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-3-1" checked>
+                      <label for="chk-3-1">도로구간 종류</label>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-3-2">
+                      <label for="chk-3-2">일이삼사아오육칠팔구십일이삼사아오육칠팔</label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="top-area">
+                <span class="label">세부속성</span>
+                <span class="total"><em>1</em>/11 </span>
+              </div>
+              <div class="chk-area c-scrollbar">
+                <ul class="chk-list vertical">
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-4-1" checked>
+                      <label for="chk-4-1">차도</label>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-4-2">
+                      <label for="chk-4-2">길어깨</label>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-4-3">
+                      <label for="chk-4-3">측도</label>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="chk-base">
+                      <input type="checkbox" id="chk-4-4">
+                      <label for="chk-4-4">일이삼사아오육칠팔구십일이삼사아오</label>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="long">
+              <div class="top-area">
+                <span class="label">Value</span>
+                <span class="total"><em>1</em>/11 </span>
+              </div>
+              <div class="chk-area">
+                <ul class="value-list">
+                  <li>
+                    <span class="label">최대 종단경사(%)</span>
+                    <ul class="item">
+                      <li>
+                        <a href="#" class="item-selector">=</a>
+                        <div class="item-select-area">
+                          <ul>
+                            <li class="on"><a href="#">=</a></li>
+                            <li><a href="#">&lt;&gt;</a></li>
+                            <li><a href="#">&gt;</a></li>
+                            <li><a href="#">&lt;</a></li>
+                            <li><a href="#">&lt;=</a></li>
+                            <li><a href="#">&gt;=</a></li>
+                            <li><a href="#">between</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><input type="number" value="3" readonly /></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="label">차로수</span>
+                    <ul class="item">
+                      <li>
+                        <a href="#" class="item-selector between">between</a>
+                        <div class="item-select-area">
+                          <ul>
+                            <li class="on"><a href="#">=</a></li>
+                            <li><a href="#">&lt;&gt;</a></li>
+                            <li><a href="#">&gt;</a></li>
+                            <li><a href="#">&lt;</a></li>
+                            <li><a href="#">&lt;=</a></li>
+                            <li><a href="#">&gt;=</a></li>
+                            <li><a href="#">between</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><input type="number" value="1" readonly /></li>
+                      <li>
+                        <a href="#" class="item-and">and</a>
+                      </li>
+                      <li><input type="number" value="3" readonly /></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="label">최소 차로폭(m)</span>
+                    <ul class="item">
+                      <li>
+                        <a href="#" class="item-selector between">between</a>
+                        <div class="item-select-area">
+                          <ul>
+                            <li class="on"><a href="#">=</a></li>
+                            <li><a href="#">&lt;&gt;</a></li>
+                            <li><a href="#">&gt;</a></li>
+                            <li><a href="#">&lt;</a></li>
+                            <li><a href="#">&lt;=</a></li>
+                            <li><a href="#">&gt;=</a></li>
+                            <li><a href="#">between</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><input type="number" value="1" readonly /></li>
+                      <li>
+                        <a href="#" class="item-and">and</a>
+                      </li>
+                      <li><input type="number" value="3" readonly /></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="label">최소 오른쪽 길어깨 폭(m)</span>
+                    <ul class="item">
+                      <li>
+                        <a href="#" class="item-selector">=</a>
+                        <div class="item-select-area">
+                          <ul>
+                            <li class="on"><a href="#">=</a></li>
+                            <li><a href="#">&lt;&gt;</a></li>
+                            <li><a href="#">&gt;</a></li>
+                            <li><a href="#">&lt;</a></li>
+                            <li><a href="#">&lt;=</a></li>
+                            <li><a href="#">&gt;=</a></li>
+                            <li><a href="#">between</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><input type="number" value="3" readonly /></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="label">노면표시 성능 수준(%)</span>
+                    <ul class="item">
+                      <li>
+                        <a href="#" class="item-selector">&lt;=</a>
+                        <div class="item-select-area">
+                          <ul>
+                            <li class="on"><a href="#">=</a></li>
+                            <li><a href="#">&lt;&gt;</a></li>
+                            <li><a href="#">&gt;</a></li>
+                            <li><a href="#">&lt;</a></li>
+                            <li><a href="#">&lt;=</a></li>
+                            <li><a href="#">&gt;=</a></li>
+                            <li><a href="#">between</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><input type="number" value="3" readonly /></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="label">도로 제한속도(km/h)</span>
+                    <ul class="item">
+                      <li>
+                        <a href="#" class="item-selector">&gt;=</a>
+                        <div class="item-select-area">
+                          <ul>
+                            <li class="on"><a href="#">=</a></li>
+                            <li><a href="#">&lt;&gt;</a></li>
+                            <li><a href="#">&gt;</a></li>
+                            <li><a href="#">&lt;</a></li>
+                            <li><a href="#">&lt;=</a></li>
+                            <li><a href="#">&gt;=</a></li>
+                            <li><a href="#">between</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><input type="number" value="3" readonly /></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="label">일이삼사오육칠팔구십일이삼사오육칠팔구십</span>
+                    <ul class="item">
+                      <li>
+                        <a href="#" class="item-selector between">between</a>
+                        <div class="item-select-area">
+                          <ul>
+                            <li class="on"><a href="#">=</a></li>
+                            <li><a href="#">&lt;&gt;</a></li>
+                            <li><a href="#">&gt;</a></li>
+                            <li><a href="#">&lt;</a></li>
+                            <li><a href="#">&lt;=</a></li>
+                            <li><a href="#">&gt;=</a></li>
+                            <li><a href="#">between</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><input type="number" value="1" readonly /></li>
+                      <li>
+                        <a href="#" class="item-selector and">and</a>
+                      </li>
+                      <li><input type="number" value="3" readonly /></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div><!-- .filter-wrap -->
+        <div class="btns-wrap t-center mt16">
+          <span class="btn-base tp1 md b-mfp-close"><a href="#">취소</a></span>
+          <span class="btn-base tp2 md"><a href="#">저장</a></span>
+        </div>
+      </div>
+    </div><!-- .popup-wrap -->
+
+    <div class="popup-wrap z-anim mfp-hide" id="popup-notice" data-width="483">
+      <div class="con-wrap">
+        <p class="msg">재구성 목록 조회에서 선택된 시나리오 유형과 매핑된 시나리오 목록이 조회됩니다.</p>
+        <div class="btns-wrap t-center mt16">
+          <span class="btn-base tp1 md b-mfp-close"><a href="#">취소</a></span>
+          <span class="btn-base tp2 md"><a href="#">확인</a></span>
+        </div>
+      </div>
+    </div><!-- .popup-wrap -->
+  </div><!-- #wrapper -->
+
+  <script>
+    var timer;
+    $(window).on('load resize', function(){
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        calculateFrame();
+      }, 250);
+    });
+    
+    var calculateFrame = function(){
+      $('#searchList .result-frame').css('height', $(window).height() - $('#searchList .result-frame').offset().top); // 우측 이동식 영상 목록 영역
+    }
+
+    $('.map-area .btn-map-search').on('click', function(e){
+      e.preventDefault();
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        calculateFrame();
+      }, 250);
+    });
+    
+    $('.panel-wrap').find('.btn-close').on('click', function(e){
+      e.preventDefault();
+      var $target = $(this).closest('.panel-wrap');
+      $target.removeClass('on');
+      $target.next('.panel-left-area.on').removeClass('on');
+      $('.map-container').removeClass('activePanel');
+    });
+    $('.panel-wrap .tb-list.tb-event td').on('click', function(){
+      var $target = $(this).closest('.panel-wrap');
+      $target.next('.panel-left-area').addClass('on');
+      $('.map-container').addClass('activePanelLeft');
+    });
+
+    $('.panel-left-area .btn-back').on('click', function(e){
+      e.preventDefault();
+      $(this).closest('.panel-left-area').removeClass('on');
+      $('.map-container').removeClass('activePanelLeft');
+    }); 
+
+    $('.item-selector').on('click', function(e){
+      e.preventDefault();
+      var target = $(this).next('.item-select-area');
+      if (!target.hasClass('on')) {
+        target.addClass('on');
+      } else {
+        target.removeClass('on');
+      }
+    });
+    $('.item-select-area li a').on('click', function(e){
+      e.preventDefault();
+      var target = $(this).closest('.item-select-area');
+      if ($(this).text() == 'between') {
+        target.prev('.item-selector').addClass('between');
+        target.prev('.item-selector').closest('li').after('<li><a href="#" class="item-and">and</a></li>');
+        target.prev('.item-selector').closest('li').after('<li><input type="number" value="1" readonly></li>');
+      } else {
+        var itemAnd = target.prev('.item-selector').closest('.item').find('.item-and');
+        if (itemAnd.length) {
+          itemAnd.closest('li').prev('li').remove();
+          itemAnd.closest('li').remove();
+        }
+        target.prev('.item-selector').removeClass('between');
+      }
+      $(this).closest('li').addClass('on');
+      target.prev('.item-selector').text($(this).text());
+      $(this).closest('li').siblings().removeClass('on');
+      target.removeClass('on');
+    });
+    $(document).on('click', function(e){
+      if (!$(e.target).closest('.item-select-area, .item-selector').length) {
+        if ($('.item-select-area').hasClass('on')) {
+          $('.item-select-area').removeClass('on');
+        }
+      }
+    });
+
+    var queryLnb = $.urlParam('lnb');
+    var queryPopup = $.urlParam('popup');
+    var queryPanel = $.urlParam('panel');
+
+	  if (queryLnb == 'false') {
+      setTimeout(function(){
+        $('.lnb-wrap .btn-menu').click();
+      }, 250);
+    }
+    if (queryPanel == 'true') {
+      $('#searchList').addClass('on');
+      $('.tip-box-wrap.ver_map').css('right', 370);
+    }
+
+    if (queryPopup) {
+      $.magnificPopup.open(getOptions('#popup-' + queryPopup));
+    }
+  </script>
+</body>
+</html>

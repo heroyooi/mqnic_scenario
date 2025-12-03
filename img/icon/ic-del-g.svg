@@ -1,0 +1,7 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="frxgx8l1aa" fill="#fff">
+        <path d="M2 3h12v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3z"/>
+    </mask>
+    <path d="M2 3h12v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3z" stroke="#6F747D" stroke-width="4" mask="url(#frxgx8l1aa)"/>
+    <path d="M1 4h14M8 2v2" stroke="#6F747D" stroke-width="2" stroke-linecap="round"/>
+</svg>

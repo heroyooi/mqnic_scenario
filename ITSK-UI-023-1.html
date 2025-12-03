@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div id="container">
+      <div class="lnb-wrap">
+        <h1><a href="#"></a></h1>
+        <a href="#" class="btn-menu"></a>
+        <h2 class="hide">메뉴</h2>
+        <ul class="lnb" data-active="3">
+          <li class="search">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 검색</span>
+            </a>
+          </li>
+          <li class="makeup">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 재구성</span>
+            </a>
+          </li>
+          <li class="create">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 생성 및 업로드</span>
+            </a>
+          </li>
+          <li class="data">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 대쉬보드</span>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="btn-logout"></a>
+      </div><!-- .lnb-wrap -->
+      <div class="content-wrap">
+        <div class="tit-area">
+          <div class="tab-base" style="width: 400px;">
+            <ul>
+              <li class="on"><a href="#">시나리오 업로드</a></li>
+              <li><a href="#">시나리오 생성</a></li>
+            </ul>
+          </div>
+          <h3 class="upload">시나리오 업로드</h3>
+        </div>
+
+        <div class="tip-box-wrap" id="tip_openx">
+          <div class="tip-box">
+            <p>파일 유형을 선택하고 시나리오 파일을 업로드해 주세요. openx</p>
+          </div>
+          <span class="btn-base tp2 md"><a href="#"><span class="ico upload2 front">업로드</span></a></span>
+          <input type="file" class="top-file" />
+        </div>
+
+        <div class="tip-box-wrap" id="tip_scenario" style="display: none;">
+          <div class="tip-box">
+            <p>파일 유형을 선택하고 시나리오 파일을 업로드해 주세요. scenario</p>
+          </div>
+          <span class="btn-base tp2 md"><a href="#"><span class="ico upload2 front">업로드</span></a></span>
+          <input type="file" class="top-file" />
+        </div>
+
+        <ul class="regist-list tp2">
+          <li>
+            <div class="regist-form">
+              <ul class="form-list">
+                <li>
+                  <span class="label" style="min-width: 73px;">파일유형</span>
+                  <div class="input-flex">
+                    <div class="btns-wrap">
+                      <span class="radio-base radio-button">
+                        <input type="radio" id="radio_file_type1" name="radio_file_type" checked>
+                        <label for="radio_file_type1">OpenX 파일</label>
+                      </span>
+                      <span class="radio-base radio-button">
+                        <input type="radio" id="radio_file_type2" name="radio_file_type">
+                        <label for="radio_file_type2">시나리오 엑셀 파일(.xlsx)</label>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <span class="label" style="min-width: 73px;">시나리오 위치</span>
+                  <div class="input-flex">
+                    <ul class="radio-list radio-select">
+                      <li>
+                        <span class="select-base" style="width: 530px;">
+                          <span class="value"></span>
+                          <select>
+                            <option value="0">선택</option>
+                            <option value="1" selected>본선</option>
+                            <option value="2">Value 2</option>
+                            <option value="3">Value 3</option>
+                          </select>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <span class="label" style="min-width: 73px;">시나리오 유형</span>
+                  <div class="input-flex">
+                    <div class="input-wrap">
+                      <span class="label bold mr8">Logical 시나리오</span>
+                      <ul class="radio-list radio-select">
+                        <li>
+                          <span class="select-base" style="width: 430px;">
+                            <span class="value"></span>
+                            <select>
+                              <option value="0">선택</option>
+                              <option value="1" selected>컷아웃 - 목표차가 정상 컷아웃</option>
+                              <option value="2">Value 2</option>
+                              <option value="3">Value 3</option>
+                            </select>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li id="li-openx-type" style="display: none;">
+                  <span class="label" style="min-width: 73px;">시나리오 형태</span>
+                  <div class="input-flex">
+                    <ul class="radio-list">
+                      <li>
+                        <span class="radio-base">
+                          <input type="radio" id="radio-stype-1" name="radio-stype" checked>
+                          <label for="radio-stype-1">Logical 시나리오</label>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="radio-base">
+                          <input type="radio" id="radio-stype-2" name="radio-stype">
+                          <label for="radio-stype-2">Concrete 시나리오</label>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li id="li-openx-file">
+            <div class="file-each-area" id="openx">
+              <ul>
+                <li>
+                  <div class="inner">
+                    <a href="javascript:void(0);" class="text-file">파일찾기</a>
+                    <input type="file" class="file" />
+                    <span>에서 OpneScenario파일을 선택해 주세요.</span>
+                  </div>
+                  <div class="file-list-area edit mt10" style="display: none;">
+                    <ul></ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="inner">
+                    <a href="javascript:void(0);" class="text-file">파일찾기</a>
+                    <input type="file" class="file" />
+                    <span>에서 OpneScenario매개변수 파일을 선택해 주세요.</span>
+                  </div>
+                  <div class="file-list-area edit mt10" style="display: none;">
+                    <ul></ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="inner">
+                    <a href="javascript:void(0);" class="text-file">파일찾기</a>
+                    <input type="file" class="file" />
+                    <span>에서 OpneDrive파일을 선택해 주세요.</span>
+                  </div>
+                  <div class="file-list-area edit mt10" style="display: none;">
+                    <ul></ul>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+          </li>
+
+          <li id="li-scenario-file" style="display: none;">
+            <div class="file-dnd-area" id="scenario">
+              <div class="file-list-area edit mt10" style="display: none">
+                <ul>
+                  <!-- <li>
+                    <a href="#" class="btn-del-file">삭제</a>
+                    <div class="f-detail">
+                      <div class="f-info">
+                        <span class="f-name">OpenScenario.xosc</span>
+                        <span class="f-size">9.1 KB</span>
+                      </div>
+                      <span class="f-state success">성공적으로 업로드 되었습니다.</span>
+                    </div>
+                  </li><li>
+                    <a href="#" class="btn-del-file">삭제</a>
+                    <div class="f-detail">
+                      <div class="f-info">
+                        <span class="f-name">OpenScenario.xosc</span>
+                        <span class="f-size">9.1 KB</span>
+                      </div>
+                      <span class="f-state error">Open Drive 파일에 대한 유효한 OpenScenario 파일이 없습니다</span>
+                    </div>
+                  </li>
+                -->
+                </ul>
+              </div>
+              <div class="file-dnd">
+                <div class="file-msg-area">
+                  <span class="msg">파일찾기 또는 이곳에 파일을 드롭해 주세요. scenario</span>
+                  <span class="info">1개씩, 파일당 최대 5MB 이하</span>
+                </div>
+                <div class="file-btn-area">
+                  <span class="btn-base tp2 xl"><a href="#"><span class="ico upload">파일찾기</span></a></span>
+                  <input type="file" />
+                </div>
+              </div>
+            </div><!-- .file-dnd-area -->
+            
+          </li>
+        </ul>
+      </div><!-- .content-wrap -->
+    </div><!-- #container -->
+  </div><!-- #wrapper -->
+  <script>
+    $('#radio_file_type1').on('change', function(){
+      if ($(this).is(':checked')) {
+        $('#tip_openx').css('display', 'flex');
+        // $('#li-scenario-type').css('display', 'none');
+        $('#li-openx-type').css('display', 'flex');
+        $('#li-openx-file').css('display', 'block');
+        $('#li-scenario-file').css('display', 'none');
+        $('#tip_scenario').css('display', 'none');
+      }
+    });
+    $('#radio_file_type2').on('change', function(){
+      if ($(this).is(':checked')) {
+        $('#tip_scenario').css('display', 'flex');
+        // $('#li-scenario-type').css('display', 'flex');
+        $('#li-openx-type').css('display', 'none');
+        $('#li-openx-file').css('display', 'none');
+        $('#li-scenario-file').css('display', 'block');
+        $('#tip_openx').css('display', 'none');
+      }
+    });
+    $('.radio-select li input[type="radio"]').on('change', function(){
+      if ($(this).is(':checked')) {
+        $(this).closest('li').find('.select-base').removeClass('disabled');
+        $(this).closest('li').siblings().find('.select-base').addClass('disabled');
+      }
+    });
+
+    $('.file-dnd-area').each(function(){
+      var $id = $(this).attr('id'); // OpenX 파일, 시나리오 엑셀 파일 구분
+      var $list = $(this).find('.file-list-area');
+      var $dnd = $(this).find('.file-dnd');
+      $dnd.on('dragover', function(e) {
+        e.preventDefault();
+      });
+
+      $dnd.on('drop', function(e) {
+        e.preventDefault();
+        var file = e.originalEvent.dataTransfer.files[0];
+        var formData = new FormData();
+        formData.append('uploadFile', file);
+        addFileList(file.name, file.size, $list, $id, $dnd);
+      });
+
+      $dnd.find('input[type="file"]').on('change', function(){
+        var file = this.files[0];
+        var fileValue = this.value.split('\\');
+        addFileList(fileValue[fileValue.length-1], file.size, $list, $id, $dnd);
+      });
+
+      $list.on('click', '.btn-del-file', function(e){
+        e.preventDefault();
+        $(this).closest('li').remove();
+        // if ($id == 'openx') {
+        //   if ($list.find('li').length <= 1) {
+        //     $dnd.css('display', 'block');
+        //     $('#tip_openx .btn-base').removeClass('disabled');
+        //   }
+        // }
+        if ($id == 'scenario') {
+          if ($list.find('li').length == 0) {
+            $dnd.css('display', 'block');
+            $('#tip_scenario .btn-base').removeClass('disabled');
+          }
+        }
+        if ($(this).find('li').length === 0) {
+          $(this).hide();
+        }
+      });
+    });
+
+    
+
+    $('#tip_openx .top-file').on('change', function(){
+      var file = this.files[0];
+      var fileValue = this.value.split('\\');
+      // addFileList(fileValue[fileValue.length-1], file.size, $('#li-openx-file .file-list-area'), 'openx', $('#li-openx-file .file-dnd'));
+      addFileList(fileValue[fileValue.length-1], file.size, $('#li-openx-file .file-each-area > ul > li:eq(0)').find('.file-list-area'), 'openx', null);
+    });
+
+    $('#tip_scenario .top-file').on('change', function(){
+      var file = this.files[0];
+      var fileValue = this.value.split('\\');
+      addFileList(fileValue[fileValue.length-1], file.size, $('#li-scenario-file .file-list-area'), 'scenario', $('#li-scenario-file .file-dnd'));
+    });
+
+    var addFileList = function(fileName, fileSize, $list, $id, $dnd){
+      var sizeInKB = (fileSize / 1024).toFixed(1);
+      $list.find('ul').append(`<li>
+          <a href="#" class="btn-del-file">삭제</a>
+          <div class="f-detail">
+            <div class="f-info">
+              <span class="f-name">${fileName}</span>
+              <span class="f-size">${sizeInKB} KB</span>
+            </div>
+            <span class="f-state success">성공적으로 업로드 되었습니다.</span>
+          </div>
+        </li>`);
+      if ($list.css('display') === 'none') {
+        $list.show();
+      }
+      if ($id == 'openx') {
+        // if ($list.find('li').length >= 2) {
+        // if ($list.find('li').length >= 1) {
+        //   // $dnd.hide();
+        //   $('#tip_openx .btn-base').addClass('disabled');
+        // } else {
+        //   // $dnd.show();
+        //   $('#tip_openx .btn-base').removeClass('disabled');
+        // }
+      }
+
+      if ($id == 'scenario') {
+        if ($list.find('li').length >= 1) {
+          $dnd.hide();
+          $('#tip_scenario .btn-base').addClass('disabled');
+        } else {
+          $dnd.show();
+          $('#tip_scenario .btn-base').removeClass('disabled');
+        } 
+      }
+    };
+    
+    // openx 수정
+    $('.file-each-area').on('click', '.btn-del-file', function(){
+      $(this).closest('.file-list-area').hide();
+      $(this).closest('li').remove();
+      if ($(this).closest('.file-each-area').find('.file-list-area li').length <= 1) {
+        $('#tip_openx .btn-base').removeClass('disabled');
+      }
+    });
+
+    $('.file-each-area > ul > li input.file').on('change', function(){
+      var file = this.files[0];
+      var fileValue = this.value.split('\\');
+      addFileList(fileValue[fileValue.length-1], file.size, $(this).closest('li').find('.file-list-area'), 'openx', null);
+    });
+
+    var querySample = $.urlParam('sample');
+    
+    if (querySample == 'openx2') {
+      $('#li-openx-file .file-each-area > ul > li:eq(1) ul').append(`
+        <li>
+          <a href="#" class="btn-del-file">삭제</a>
+          <div class="f-detail">
+            <div class="f-info">
+              <span class="f-name">OpenScenario.xosc</span>
+              <span class="f-size">9.1 KB</span>
+            </div>
+            <span class="f-state success">성공적으로 업로드 되었습니다.</span>
+          </div>
+        </li>`);
+      $('#li-openx-file .file-each-area > ul > li:eq(2) ul').append(`
+        <li>
+          <a href="#" class="btn-del-file">삭제</a>
+          <div class="f-detail">
+            <div class="f-info">
+              <span class="f-name">OpenScenario.xosc</span>
+              <span class="f-size">9.1 KB</span>
+            </div>
+            <span class="f-state error">Open Drive 파일에 대한 유효한 OpenScenario 파일이 없습니다</span>
+          </div>
+        </li>
+      `);
+      $('#li-openx-file .file-each-area > ul > li:eq(1) .file-list-area').show();
+      $('#li-openx-file .file-each-area > ul > li:eq(2) .file-list-area').show();
+      // $('#li-openx-file .file-dnd').hide();
+      $('#tip_openx .btn-base').addClass('disabled');
+    } else if (querySample == 'openx') {
+      $('#radio_file_type1').click();
+    } else if (querySample == 'openx1') {
+      $('#li-openx-file .file-each-area > ul > li:eq(1) ul').append(`
+        <li>
+          <a href="#" class="btn-del-file">삭제</a>
+          <div class="f-detail">
+            <div class="f-info">
+              <span class="f-name">OpenScenario.xosc</span>
+              <span class="f-size">9.1 KB</span>
+            </div>
+            <span class="f-state success">성공적으로 업로드 되었습니다.</span>
+          </div>
+        </li>`);
+      $('#li-openx-file .file-each-area > ul > li:eq(1) .file-list-area').show();
+    } else if (querySample == 'scenario1') {
+      $('#radio_file_type2').click();
+      $('#li-scenario-file .file-list-area ul').append(`
+        <li>
+          <a href="#" class="btn-del-file">삭제</a>
+          <div class="f-detail">
+            <div class="f-info">
+              <span class="f-name">OpenScenario.xosc</span>
+              <span class="f-size">9.1 KB</span>
+            </div>
+            <span class="f-state success">성공적으로 업로드 되었습니다.</span>
+          </div>
+        </li>
+      `);
+      $('#li-scenario-file .file-list-area').show();
+      $('#li-scenario-file .file-dnd').hide();
+      $('#tip_scenario .btn-base').addClass('disabled');
+    } else {
+      $('#radio_file_type2').click();
+    }
+  </script>
+</body>
+</html>

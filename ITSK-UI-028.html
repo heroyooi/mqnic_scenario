@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div id="container">
+      <div class="lnb-wrap">
+        <h1><a href="#"></a></h1>
+        <a href="#" class="btn-menu"></a>
+        <h2 class="hide">메뉴</h2>
+        <ul class="lnb" data-active="3 ">
+          <li class="search">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 검색</span>
+            </a>
+          </li>
+          <li class="makeup">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 재구성</span>
+            </a>
+          </li>
+          <li class="create">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 생성 및 업로드</span>
+            </a>
+          </li>
+          <li class="data">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 대쉬보드</span>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="btn-logout"></a>
+      </div><!-- .lnb-wrap -->
+      <div class="content-wrap">
+        <div class="tit-area">
+          <div class="tab-base" style="width: 400px;">
+            <ul>
+              <li class="on"><a href="#">시나리오 업로드</a></li>
+              <li><a href="#">시나리오 생성</a></li>
+            </ul>
+          </div>
+          <h3 class="no-icon">시나리오 검증결과</h3>
+          <div class="tip-box-wrap">
+            <div class="tip-box success">
+              <p>검증 및 변환 작업이 정상적으로 완료 되었습니다.</p>
+            </div>
+            <div class="btns-wrap">
+              <span class="btn-base tp1 md"><a href="#"><span class="ico cancel front">취소</span></a></span>
+              <span class="btn-base tp2 md"><a href="#"><span class="ico confirm front">확인</span></a></span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="radio-list">
+          <li>
+            <span class="radio-base">
+              <input type="radio" id="radio-open-1" name="radio-open" checked>
+              <label for="radio-open-1">OpenScenario 1.x</label>
+            </span>
+          </li>
+          <li>
+            <span class="radio-base">
+              <input type="radio" id="radio-open-2" name="radio-open">
+              <label for="radio-open-2">OpenRive 1.x</label>
+            </span>
+          </li>
+        </ul>
+
+        <div class="tb-wrap radius-8 td-normal mt16">
+          <div class="tb-head">
+            <table summary="시나리오 목록" class="tb-list">
+              <colgroup>
+                <col width="30%" />
+                <col width="30%" />
+                <col width="30%" />
+                <col width="10%" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">CheckTyp</th>
+                  <th scope="col">CheckSubTyp</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">ErrorLevel</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="tb-body">
+            <table summary="시나리오 목록" class="tb-list">
+              <colgroup>
+                <col width="30%" />
+                <col width="30%" />
+                <col width="30%" />
+                <col width="10%" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td class="left">schema</td>
+                  <td class="left">parse file</td>
+                  <td class="left">xosc의 xsd유효성 확인</td>
+                  <td class="left"></td>
+                </tr>
+                <tr>
+                  <td class="left">schema</td>
+                  <td class="left">parse file</td>
+                  <td class="left">xosc의 xsd유효성 확인</td>
+                  <td class="left"></td>
+                </tr>
+                <tr>
+                  <td class="left">schema</td>
+                  <td class="left">parse file</td>
+                  <td class="left">xosc의 xsd유효성 확인</td>
+                  <td class="left"></td>
+                </tr>
+                <tr>
+                  <td class="left">schema</td>
+                  <td class="left">parse file</td>
+                  <td class="left">xosc의 xsd유효성 확인</td>
+                  <td class="left"></td>
+                </tr>
+                <tr>
+                  <td class="left">schema</td>
+                  <td class="left">parse file</td>
+                  <td class="left">xosc의 xsd유효성 확인</td>
+                  <td class="left"></td>
+                </tr>
+                <tr>
+                  <td class="left">schema</td>
+                  <td class="left">parse file</td>
+                  <td class="left">xosc의 xsd유효성 확인</td>
+                  <td class="left"></td>
+                </tr>
+                <tr>
+                  <td class="left">schema</td>
+                  <td class="left">parse file</td>
+                  <td class="left">xosc의 xsd유효성 확인</td>
+                  <td class="left"></td>
+                </tr>
+                <tr>
+                  <td class="left">schema</td>
+                  <td class="left">parse file</td>
+                  <td class="left">xosc의 xsd유효성 확인</td>
+                  <td class="left"></td>
+                </tr>
+                <tr>
+                  <td class="left">schema</td>
+                  <td class="left">parse file</td>
+                  <td class="left">xosc의 xsd유효성 확인</td>
+                  <td class="left"></td>
+                </tr>
+                <tr>
+                  <td class="left">schema</td>
+                  <td class="left">parse file</td>
+                  <td class="left">xosc의 xsd유효성 확인</td>
+                  <td class="left"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div><!-- .tb-wrap -->
+        
+      </div><!-- .content-wrap -->
+    </div><!-- #container -->
+  </div><!-- #wrapper -->
+  <script>
+    
+  </script>
+</body>
+</html>

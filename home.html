@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div id="container" class="main">
+      <div class="lnb-wrap" data-aos="fade-right">
+        <h1><a href="#"></a></h1>
+        <a href="#" class="btn-menu"></a>
+        <h2 class="hide">메뉴</h2>
+        <ul class="lnb">
+          <li class="drive">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">주행환경 검색</span>
+            </a>
+          </li>
+          <li class="scenario">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 통계</span>
+            </a>
+          </li>
+          <li class="video">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">영상정보 등록</span>
+            </a>
+          </li>
+          <li class="history">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">영상정보 이력</span>
+            </a>
+          </li>
+          <li class="data">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">데이터 모니터링</span>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="btn-logout"></a>
+      </div><!-- .lnb-wrap -->
+      <div class="content-wrap">
+        <div class="welcome-area" data-aos="fade">
+          <h2>Welcome</h2>
+          <p class="msg">주행환경 SCENE DB 시스템을 활용하기 위해서 <br /><strong>영상 업로드 버튼</strong>을 클릭하여 진행해주세요.</p>
+          <span class="btn-base tp2 xl"><a href="#"><span class="ico upload">영상 업로드</span></a></span>
+        </div>
+      </div><!-- .content-wrap -->
+    </div><!-- #container -->
+  </div><!-- #wrapper -->
+
+  <script>
+    var query = $.urlParam('sample');
+	  if (query === '') {}
+  </script>
+</body>
+</html>

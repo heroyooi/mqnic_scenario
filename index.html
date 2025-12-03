@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> 퍼블리싱 - 코딩맵 </title>
+  <link rel="stylesheet" type="text/css" href="./_guide/guide.css" />
+	<script type="text/javascript" src="./_guide/dtree.js"></script>
+</head>
+<body class="c-scrollbar">
+  <div class="guide-wrapper">
+    <div id="content_guide_list">
+      <h1>퍼블리싱 진행표</h1>
+      <h2>진행 표시</h2>
+      <ul>
+  			<li><span style="color:#aeaeae;">■ 작업전</span></li>
+  			<li><span style="color:green;">■ 작업중</span></li>
+  			<li><span style="color:#5727ff;">■ 완료</span></li>
+  			<li><span style="color:#37b4e7;">■ 신규</span></li>
+  			<li><span style="color:#f55;">■ 수정</span></li>
+      </ul>
+      <span id="t_title"></span>
+    </div>
+    <div class="dtree">
+  		<div class="area_btn">
+  			<a href="javascript: b.openAll();"><img src="./_guide/img/btn_expand.gif" alt="Expand All" /></a>
+  			<a href="javascript: b.closeAll();"><img src="./_guide/img/btn_collapse.gif" alt="Collapse All" /></a>
+  		</div>
+  		<script type="text/javascript">
+			//<![CDATA[
+			b = new dTree('b');
+
+			b.add(0, -1, 'IT SK 주행환경');
+
+			b.add(1, 0, '00 Login');
+			b.add(1.011, 1, '1-1) ITSK-UI-001 : 00 Login', 'ITSK-UI-001.html', '완료', '_blank');
+			b.add(1.012, 1, '1-2) ITSK-UI-001 : 00 Login : Error', 'ITSK-UI-001.html?sample=validation', '완료', '_blank');
+			b.add(1.013, 1, '1-3) ITSK-UI-001 : 00 Loading - 컴포넌트 가이드 마지막에 예제 있음', 'ITSK-UI-002.html?loading=true', '완료', '_blank');
+			b.add(1.0141, 1, '1-4-1) ITSK-UI-001 : 00 popup : 알림1', 'ITSK-UI-002.html?popup=notice1', '완료', '_blank');
+			b.add(1.0142, 1, '1-4-2) ITSK-UI-001 : 00 popup : 알림2', 'ITSK-UI-002.html?popup=notice2', '완료', '_blank');
+			b.add(1.0143, 1, '1-4-3) ITSK-UI-001 : 00 popup : 알림3', 'ITSK-UI-002.html?popup=notice3', '완료', '_blank');
+
+			b.add(2, 0, '01 시나리오 검색');
+			b.add(2.011, 2, '1-1) ITSK-UI-002', 'ITSK-UI-002.html', '완료', '_blank');
+			b.add(2.012, 2, '1-2) ITSK-UI-003 : 필터 팝업 - 시나리오 상세정보', 'ITSK-UI-002.html?popup=filter', '완료', '_blank');
+			b.add(2.013, 2, '1-3) ITSK-UI-004 : 필터 팝업 - ODD 상세정보', 'ITSK-UI-002.html?popup=filter&tab=2', '완료', '_blank');
+			b.add(2.021, 2, '2-1) ITSK-UI-005', 'ITSK-UI-005.html', '완료', '_blank');
+			b.add(2.022, 2, '2-2) ITSK-UI-035', 'ITSK-UI-035.html', '완료', '_blank');
+			b.add(2.023, 2, '2-3) ITSK-UI-005 : 코드보기', 'ITSK-UI-005.html?tab=2', '완료', '_blank');
+			b.add(2.031, 2, '3-1) ITSK-UI-006', 'ITSK-UI-006.html', '완료', '_blank');
+			b.add(2.032, 2, '3-2) ITSK-UI-006 : 툴팁위치', 'ITSK-UI-006.html?tooltip=true', '완료', '_blank');
+			b.add(2.04, 2, '4) ITSK-UI-007', 'ITSK-UI-007.html', '완료', '_blank');
+			b.add(2.05, 2, '5) ITSK-UI-008', 'ITSK-UI-008.html', '완료', '_blank');
+			b.add(2.061, 2, '6-1) ITSK-UI-010', 'ITSK-UI-010.html', '완료', '_blank');
+			b.add(2.062, 2, '6-2) ITSK-UI-013 : 시나리오 반려 팝업', 'ITSK-UI-010.html?popup=return', '완료', '_blank');
+			b.add(2.07, 2, '7) ITSK-UI-011', 'ITSK-UI-011.html', '완료', '_blank');
+			b.add(2.08, 2, '8) ITSK-UI-014', 'ITSK-UI-014.html', '완료', '_blank');
+			b.add(2.091, 2, '9-1) ITSK-UI-023', 'ITSK-UI-023.html', '완료', '_blank');
+			b.add(2.092, 2, '9-2) ITSK-UI-023 > 검색결과', 'ITSK-UI-023.html?bottom=true', '완료', '_blank');
+			b.add(2.093, 2, '9-3) ITSK-UI-023 > 검색결과 닫기', 'ITSK-UI-023.html?bottom=true&sample=close', '완료', '_blank');
+
+			b.add(3, 0, '02 시나리오 재구성');
+			b.add(3.011, 3, '1-1) ITSK-UI-019', 'ITSK-UI-019.html', '완료', '_blank');
+			b.add(3.012, 3, '1-2) ITSK-UI-019 : 필터 팝업', 'ITSK-UI-019.html?popup=filter&lnb=false', '완료', '_blank');
+			b.add(3.013, 3, '1-3) ITSK-UI-020 : 재구성 목록 조회(우측 패널)', 'ITSK-UI-019.html?lnb=false&panel=true', '완료', '_blank');
+			b.add(3.014, 3, '1-4) ITSK-UI-021 : 얼럿 팝업', 'ITSK-UI-019.html?popup=notice', '완료', '_blank');
+			b.add(3.02, 3, '2) ITSK-UI-022', 'ITSK-UI-022.html', '완료', '_blank');
+
+			b.add(4, 0, '03 시나리오 생성 및 업로드');
+			b.add(4.011, 4, '1-1) ITSK-UI-023 : 시나리오 엑셀 파일 - 기본', 'ITSK-UI-023-1.html', '완료', '_blank');
+			b.add(4.012, 4, '1-2) ITSK-UI-023 : OpenX - 기본', 'ITSK-UI-023-1.html?sample=openx', '완료', '_blank');
+			b.add(4.013, 4, '1-3) ITSK-UI-027 : OpenX - 2개 파일 업로드된 상태', 'ITSK-UI-023-1.html?sample=openx2', '완료', '_blank');
+			b.add(4.014, 4, '1-4) ITSK-UI-027 : OpenX - 1개 파일만 업로드된 상태', 'ITSK-UI-023-1.html?sample=openx1', '완료', '_blank');
+			b.add(4.015, 4, '1-5) ITSK-UI-024 : 시나리오 엑셀 파일 - 1개 파일만 업로드된 상태', 'ITSK-UI-023-1.html?sample=scenario1', '완료', '_blank');
+			b.add(4.021, 4, '2-1) ITSK-UI-028 : 성공', 'ITSK-UI-028.html', '완료', '_blank');
+			b.add(4.022, 4, '2-2) ITSK-UI-029 : 실패', 'ITSK-UI-029.html', '완료', '_blank');
+			b.add(4.03, 4, '3) ITSK-UI-030', 'ITSK-UI-030.html', '완료', '_blank');
+			b.add(4.04, 4, '4) ITSK-UI-031', 'ITSK-UI-031.html', '완료', '_blank');
+			b.add(4.05, 4, '5) ITSK-UI-033', 'ITSK-UI-033.html', '완료', '_blank');
+
+			b.add(5, 0, '04 시나리오 대쉬보드');
+			b.add(5.01, 5, '1) ITSK-UI-034', 'ITSK-UI-034.html', '완료', '_blank');
+
+			b.add(6, 0, '05 컴포넌트 가이드');
+			b.add(6.01, 6, '1) component', 'component.html', '완료', '_blank');
+			
+			document.write(b);
+			//]]>
+  		</script>
+  	</div>
+  </div>
+</body>
+</html>
