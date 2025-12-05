@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title> 퍼블리싱 - 코딩맵 </title>
+  <title> 시나리오 퍼블리싱 - 코딩맵 </title>
   <link rel="stylesheet" type="text/css" href="./_guide/guide.css" />
 	<script type="text/javascript" src="./_guide/dtree.js"></script>
 </head>
@@ -31,7 +31,7 @@
 			//<![CDATA[
 			b = new dTree('b');
 
-			b.add(0, -1, 'IT SK 주행환경');
+			b.add(0, -1, '시나리오');
 
 			b.add(1, 0, '00 Login');
 			b.add(1.011, 1, '1-1) ITSK-UI-001 : 00 Login', 'ITSK-UI-001.html', '완료', '_blank');
@@ -84,6 +84,18 @@
 
 			b.add(6, 0, '05 컴포넌트 가이드');
 			b.add(6.01, 6, '1) component', 'component.html', '완료', '_blank');
+
+			b.add(7, 0, '01 로그인/회원가입 - 25년 12월');
+			b.add(7.011, 7, '1-1) 2512:ITSK_UI_00 Login', 'login.html', '신규', '_blank');
+			b.add(7.012, 7, '1-2) 2512:ITSK_UI_00 Login>Error', 'login.html?sample=error', '신규', '_blank');
+			b.add(7.02, 7, '2) 2512:ITSK-UI-00 회원가입', 'signup.html', '신규', '_blank');
+
+			b.add(8, 0, '02 메뉴별 - 25년 12월');
+			b.add(8.011, 8, '1-1) 2512:ITSK_UI_01_01 시스템소개', 'intro.html?lnb=true', '신규', '_blank');
+			b.add(8.012, 8, '1-1) 2512:ITSK_UI_01_02 시스템소개', 'intro.html', '신규', '_blank');
+			b.add(8.02, 8, '2) 2512:ITSK_UI_02_01 가이드', 'guide.html', '신규', '_blank');
+			b.add(8.03, 8, '3) 2512:ITSK_UI_07_01 자주하는질문', 'faq.html', '신규', '_blank');
+			b.add(8.04, 8, '4) 2512:ITSK_UI_08_01 문의', 'inquiry.html', '신규', '_blank');
 			
 			document.write(b);
 			//]]>
