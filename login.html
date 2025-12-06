@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div class="login-wrap">
+      <div class="login-bg-area">
+        <div class="login-logo">
+          <p class="logo"><img src="img/login/logo_scenedb_full.png" alt=""></p>
+          <p class="text">자율차 주행환경 데이터베이스</p>
+        </div>
+      </div>
+      <div class="login-form-area">
+        <div class="login-form">
+          <h3>LOGIN</h3>
+          <ul class="form-list">
+            <li>
+              <div class="input-wrap w-del w-user">
+                <i class="ico-user"></i>
+                <input type="text" class="input-base" placeholder="아이디를 입력해주세요.">
+                <button class="btn-del">삭제</button>
+              </div>
+            </li>
+            <li>
+              <div class="input-wrap w-del w-user">
+                <i class="ico-lock"></i>
+                <input type="password" class="input-base" placeholder="패스워드를 입력해주세요.">
+                <button class="btn-del">삭제</button>
+              </div>
+            </li>
+          </ul>
+          <div class="btns-wrap">
+            <span class="btn-base tp2 md block"><a href="#">로그인</a></span>
+          </div>
+          <div class="other-menu">
+            <a href="javascript:void(0);">아이디/비밀번호 찾기</a>
+            <a href="javascript:void(0);">회원가입</a>
+          </div>
+          <ul class="sns-menu">
+            <li class="naver"><a href="javascript:void(0);"><span>네이버</span></a></li>
+            <li class="kakao"><a href="javascript:void(0);"><span>카카오</span></a></li>
+          </ul>
+          <span class="valid" style="display: none;">아이디 혹은 비밀번호가 일치하지 않습니다.</span>
+          <span class="copy">© ITS KOREA. ALL RIGHTS RESERVED.</span>
+        </div>
+      </div>
+    </div><!-- .login-wrap -->
+  </div><!-- #wrapper -->
+
+  <script>
+    var query = $.urlParam('sample');
+	  if (query === 'validation') {
+      $('.login-form .valid').show();
+    }
+  </script>
+</body>
+</html>

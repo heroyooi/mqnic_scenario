@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div id="container">
+      <div class="lnb-wrap">
+        <h1><a href="#"></a></h1>
+        <a href="#" class="btn-menu"></a>
+        <h2 class="hide">메뉴</h2>
+        <ul class="lnb" data-active="8">
+          <li class="introduction">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시스템 소개</span>
+            </a>
+          </li>
+          <li class="scenario">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시스템 가이드</span>
+            </a>
+          </li>
+          <li class="drive">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">주행환경 검색</span>
+            </a>
+          </li>
+          <li class="scenario">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 통계</span>
+            </a>
+          </li>
+          <li class="history">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">영상정보 등록</span>
+            </a>
+          </li>
+          <li class="data">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">데이터 모니터링</span>
+            </a>
+          </li>
+          <li class="faq">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">자주하는 질문</span>
+            </a>
+          </li>
+          <li class="contact">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시스템 문의</span>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="btn-logout"></a>
+      </div><!-- .lnb-wrap -->
+      <div class="content-wrap">
+        <div class="tit-area">
+          <h3 class="contact">시스템 문의</h3>
+        </div>
+        <dl class="contact-visual">
+          <dt><img src="./img/icon/new/img-content.svg" alt=""></dt>
+          <dd>자세한 문의가 필요한 내용은 아래에 원하는 내용을 보내주시면, <br />담당자가 메일로 답변해드리겠습니다.</dd>
+        </dl>
+        <div class="contact-form">
+          <div class="input-wrap">
+            <ul class="input-list">
+              <li>
+                <span class="tit essential">이름</span>
+                <div class="input-wrap w-del">
+                  <input type="text" class="input-base" placeholder="이름을 입력해주세요">
+                  <button class="btn-del">삭제</button>
+                </div>
+              </li>
+              <li>
+                <span class="tit essential">이메일</span>
+                <div class="input-wrap w-del">
+                  <input type="email" class="input-base" placeholder="이메일을 입력해주세요">
+                  <button class="btn-del">삭제</button>
+                </div>
+              </li>
+              <li>
+                <span class="tit essential">제목</span>
+                <div class="input-wrap w-del">
+                  <input type="email" class="input-base" placeholder="제목을 입력해주세요">
+                  <button class="btn-del">삭제</button>
+                </div>
+              </li>
+              <li>
+                <span class="tit essential">내용</span>
+                <div class="input-wrap w-del">
+                  <textarea class="textarea-base" placeholder="문의 내용을 입력해 주세요 (최대 1000자)"></textarea>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div><!-- .contact-wrap -->
+        <div class="btns-wrap t-center mt16">
+          <span class="btn-base tp2 lg ver_new"><a href="#"><span class="ico upload">보내기</span></a></span>
+        </div>
+      </div><!-- .content-wrap -->
+    </div><!-- #container -->
+    <div class="loading-dimm"></div>
+    <div class="loading-wrp">
+      <div class="loader"></div>
+    </div>
+  </div><!-- #wrapper -->
+  <script>
+    $('.toggle-list > li dt').on('click', function (e) {
+      e.preventDefault();
+      if (!$(this).closest('li').hasClass('on')) {
+        $(this).closest('li').addClass('on');
+      } else {
+        $(this).closest('li').removeClass('on');
+      }
+    });
+
+    var querySample = $.urlParam('sample');
+    var queryLnb = $.urlParam('lnb');
+
+    if (querySample == 'expand') {
+      setTimeout(function () {
+        $('.toggle-list > li:eq(0) dt .btn').click();
+      }, 500);
+    }
+    if (Boolean(queryLnb)) {
+      setTimeout(function () {
+        $('.lnb-wrap .btn-menu').click();
+      }, 250);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div class="login-wrap">
+      <div class="login-bg-area">
+        <div class="login-logo">
+          <p class="logo"><img src="img/login/logo_scenedb_full.png" alt=""></p>
+          <p class="text">자율차 주행환경 데이터베이스</p>
+        </div>
+      </div>
+      <div class="login-form-area" id="signup">
+        <div class="login-form">
+          <h3>회원가입</h3>
+          <div class="input-wrap">
+            <ul class="input-list">
+              <li class="ver_form">
+                <div class="input-item-wrap">
+                  <span class="tit essential">아이디</span>
+                  <div class="input-item">
+                    <div class="input-wrap w-del">
+                      <input type="text" class="input-base" placeholder="아이디를 입력해주세요">
+                      <button class="btn-del">삭제</button>
+                    </div>
+                    <span class="btn-base tp2 md"><a href="#">중복확인</a></span>
+                  </div>
+                </div>
+                <p class="s-tip">6자 이상, 영문+숫자, 또는 영문이나 숫자 조합으로 입력해주세요.</p>
+              </li>
+              <li class="ver_form">
+                <div class="input-item-wrap">
+                  <span class="tit essential">비밀번호</span>
+                  <div class="input-item">
+                    <div class="input-wrap w-del">
+                      <input type="password" class="input-base" placeholder="비밀번호를 입력해주세요">
+                      <button class="btn-del">삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <p class="s-tip">8자 이상, 영문, 숫자, 특문 중 2종류 이상 조합으로 입력해주세요.</p>
+              </li>
+              <li class="ver_form">
+                <div class="input-item-wrap">
+                  <span class="tit essential">비밀번호 확인</span>
+                  <div class="input-item">
+                    <div class="input-wrap w-del">
+                      <input type="password" class="input-base" placeholder="비밀번호를 한 번 더 입력하세요">
+                      <button class="btn-del">삭제</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="ver_form">
+                <div class="input-item-wrap">
+                  <span class="tit">이름</span>
+                  <div class="input-item">
+                    <div class="input-wrap w-del">
+                      <input type="text" class="input-base" placeholder="이름을 입력하세요">
+                      <button class="btn-del">삭제</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="ver_form">
+                <div class="input-item-wrap">
+                  <span class="tit">이메일</span>
+                  <div class="input-item">
+                    <div class="input-wrap w-del">
+                      <input type="email" class="input-base" placeholder="이메일을 입력하세요">
+                      <button class="btn-del">삭제</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="ver_form">
+                <div class="input-item-wrap">
+                  <span class="tit">전화번호</span>
+                  <div class="input-item">
+                    <div class="input-wrap w-del">
+                      <input type="text" class="input-base" placeholder="전화번호을 입력하세요">
+                      <button class="btn-del">삭제</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="ver_form">
+                <div class="input-item-wrap">
+                  <span class="tit">소속</span>
+                  <div class="input-item">
+                    <div class="input-wrap w-del">
+                      <input type="text" class="input-base" placeholder="소속을 입력하세요">
+                      <button class="btn-del">삭제</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="ver_form">
+                <div class="input-item-wrap">
+                  <span class="tit">직책</span>
+                  <div class="input-item">
+                    <div class="input-wrap w-del">
+                      <input type="text" class="input-base" placeholder="직책을 입력하세요">
+                      <button class="btn-del">삭제</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="btns-wrap w-full">
+            <span class="btn-base tp1 md"><a href="#">취소</a></span>
+            <span class="btn-base tp2 md"><a href="#">가입</a></span>
+          </div>
+          <span class="valid" style="display: none;">아이디 혹은 비밀번호가 일치하지 않습니다.</span>
+          <span class="copy">© ITS KOREA. ALL RIGHTS RESERVED.</span>
+        </div>
+      </div>
+    </div><!-- .login-wrap -->
+  </div><!-- #wrapper -->
+
+  <script>
+    var query = $.urlParam('sample');
+	  if (query === 'validation') {
+      $('.login-form .valid').show();
+    }
+  </script>
+</body>
+</html>

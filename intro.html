@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ITSK 주행환경 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tui-time-picker.js"></script>
+  <script src="js/tui-date-picker.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+
+<body class="c-scrollbar">
+  <div id="wrapper">
+    <div id="container">
+      <div class="lnb-wrap">
+        <h1><a href="#"></a></h1>
+        <a href="#" class="btn-menu"></a>
+        <h2 class="hide">메뉴</h2>
+        <ul class="lnb" data-active="1">
+          <li class="introduction">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시스템 소개</span>
+            </a>
+          </li>
+          <li class="scenario">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시스템 가이드</span>
+            </a>
+          </li>
+          <li class="drive">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">주행환경 검색</span>
+            </a>
+          </li>
+          <li class="scenario">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시나리오 통계</span>
+            </a>
+          </li>
+          <li class="history">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">영상정보 등록</span>
+            </a>
+          </li>
+          <li class="data">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">데이터 모니터링</span>
+            </a>
+          </li>
+          <li class="faq">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">자주하는 질문</span>
+            </a>
+          </li>
+          <li class="contact">
+            <a href="#">
+              <span class="ico"></span>
+              <span class="text">시스템 문의</span>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="btn-logout"></a>
+      </div><!-- .lnb-wrap -->
+      <div class="content-wrap">
+        <div class="tit-area">
+          <h3 class="intro">시스템 소개</h3>
+        </div>
+        <div class="intro-visual">
+          <p class="tit">주행환경 DB</p>
+          <p class="con">자율주행 안정성 평가 시나리오의 맞춤형 주행환경 데이터 제공을 위한 <br />도심/고속도로 주행환경 데이터 수집∙저장∙관리 시스템</p>
+          
+        </div>
+        <div class="intro-detail">
+          <p class="tit">주요 기능</p>
+          <ul>
+            <li>
+              <p class="s-tit">자율주행 주행환경 데이터 수집</p>
+              <p class="s-con">실제 주행환경 영상 및 HD-Map/자율주행지원전용지도를 통해 자율주행 평가 시나리오에 반영할 동적/정적 데이터를 수집합니다.</p>
+              <p class="s-img"><img src="./img/intro/image-01.png" alt=""></p>
+            </li>
+            <li>
+              <p class="s-tit">실제 차량 주행 궤적 및 유형 분석</p>
+              <p class="s-con">영상 인식 기술을 통해 영상 내 차량의 주행궤적을 분석하고 주행 유형(Cut-in/out 등)에 따른 동적 거동 데이터를 도출합니다.</p>
+              <p class="s-img"><img src="./img/intro/image-02.png" alt=""></p>
+            </li>
+            <li>
+              <p class="s-tit">HD-Map 기반 주행환경 검색</p>
+              <p class="s-con">자율주행 ODD 및 장면(Scene) 유형 기반 사용자 맞춤형 자율주행 평가 목표 구간을 검색하고 HD-Map 상에 주행환경 영상 및 데이터를 표출합니다.</p>
+              <p class="s-img"><img src="./img/intro/image-03.png" alt=""></p>
+            </li>
+          </ul>
+        </div>
+      </div><!-- .content-wrap -->
+    </div><!-- #container -->
+    <div class="loading-dimm"></div>
+    <div class="loading-wrp">
+      <div class="loader"></div>
+    </div>
+  </div><!-- #wrapper -->
+  <script>
+    $('.tb-wrap .th-tip .btn-tip').on('click', function () {
+      if ($(this).hasClass('on')) {
+        $('.tb-wrap .tip-area').hide();
+      }
+    });
+    $('.tb-wrap .tip-area .btn-close').on('click', function () {
+      $('.tb-wrap .th-tip .btn-tip.on').removeClass('on');
+    });
+
+    var queryLnb = $.urlParam('lnb');
+    var queryTooltip = $.urlParam('tooltip');
+
+    if (Boolean(queryTooltip)) {
+      setTimeout(function () {
+        $('[href="#tip-progress"]').click();
+      }, 500);
+    }
+    if (Boolean(queryLnb)) {
+      setTimeout(function () {
+        $('.lnb-wrap .btn-menu').click();
+      }, 250);
+    }
+  </script>
+</body>
+
+</html>

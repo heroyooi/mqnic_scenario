@@ -2617,3 +2617,37 @@ a.f-btn:hover {
   padding: 0;
   border-bottom: 0;
 }
+
+/* 2025-12 */
+.btns-wrap.t-right{justify-content: flex-end;}
+.btn-base.tp2 > *{background-color: #046bff;border-color:#046bff;}
+.input-wrap > .input-list > li.ver_form{display:block;}
+.input-wrap > .input-list > li.ver_form .input-item-wrap{display:flex;align-items:center;}
+.input-wrap > .input-list > li.ver_form .input-item-wrap .tit{min-width:90px;}
+.input-wrap > .input-list > li.ver_form .input-item-wrap .input-item{display:flex;align-items:center;flex:1 1 auto;gap:8px;}
+.input-wrap > .input-list > li.ver_form .input-item-wrap .input-item .input-wrap{flex:1 1 auto;margin-left:0;}
+.input-wrap > .input-list > li.ver_form .input-item-wrap .input-item .btn-base{flex-shrink: 0;}
+.input-wrap > .input-list > li.ver_form .s-tip{padding-left:90px;}
+.input-wrap > .input-list > li .s-tip{font-size:14px;color:#6f747d;margin-top:5px;line-height:1.5;}
+
+.btn-base > * .ico.download{padding-right:20px;}
+.btn-base > * .ico.download:before{width:16px;height:16px;background:url(../img/icon/new/icon-ic-download-w.svg) 0 0 no-repeat;right:0;top:2px;}
+
+.contact-form{background-color: #fff;width:680px;margin:0 auto;padding:40px;border-radius:12px;}
+.contact-form .input-wrap > .input-list > li{display:block;width:100%;margin-top:16px;}
+.contact-form .input-wrap > .input-list > li:first-child{margin-top: 0;}
+.contact-form .input-wrap .tit + .input-wrap, .contact-form .input-wrap .tit + .select-wrap, 
+.contact-form .input-wrap .tit + .tip-area + .radio-list{margin:0;}
+.contact-form .input-wrap .tit + .input-wrap{margin-top:8px;}
+.contact-form .input-wrap .tit{color:#38393b;font-weight:400;}
+
+.contact-visual{text-align:center;margin-bottom:32px;}
+.contact-visual dt{width:140px;height:140px;display:flex;justify-content: center;align-items: center;margin:0 auto;background-color: #fff;border-radius:70px;}
+.contact-visual dd{font-size:16px;color:#181818;font-weight:700;line-height:1.31;margin-top:16px;}
+
+.btn-base.lg.tp2.ver_new > *{padding:15px 40px 14px 40px}
+.btn-base.lg.tp2.ver_new > *, .btn-base.lg.tp2.ver_new > *:hover{background-color: #515fe4;}
+
+.btns-wrap.w-full{display:flex;gap:0 8px;}
+.btns-wrap.w-full .btn-base{margin-left:0;flex:1 1 auto;}
+.btns-wrap.w-full .btn-base > *{width:100%;}
